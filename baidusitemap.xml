@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2017-08-16T18:56:09.942Z</lastmod>
+    <data>
+        <display>
+        <title>ISODATA算法学习心得及非监督分类软件得商业化界面实现</title>
+        <pubTime>2017-08-16T18:25:00.000Z</pubTime>
+        
+        <tag>Program</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="https://cs-tao.github.io/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/16/hello-world/</loc>
+    <lastmod>2017-08-16T18:54:01.422Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-08-16T11:33:24.070Z</pubTime>
+        
+        <tag>others</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/17/about-me/</loc>
+    <lastmod>2017-08-16T18:53:03.196Z</lastmod>
+    <data>
+        <display>
+        <title>简介-自我介绍</title>
+        <pubTime>2017-08-16T17:39:53.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="about" url="https://cs-tao.github.io/categories/about/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/17/%E6%9A%91%E5%81%87%E6%97%85%E6%B8%B8%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-08-16T18:51:00.932Z</lastmod>
+    <data>
+        <display>
+        <title>2017年暑假旅游笔记</title>
+        <pubTime>2017-08-16T18:45:12.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="life" url="https://cs-tao.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/17/GMap-net-for-WPF%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E6%A0%87%E5%B9%B6%E8%AE%BE%E5%AE%9A%E7%9B%B8%E5%AF%B9%E4%BD%8D%E7%BD%AE/</loc>
+    <lastmod>2017-08-16T18:20:55.791Z</lastmod>
+    <data>
+        <display>
+        <title>GMap.net for WPF添加自定义图标并设定相对位置</title>
+        <pubTime>2017-08-16T18:16:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
