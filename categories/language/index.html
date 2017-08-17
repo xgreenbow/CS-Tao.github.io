@@ -2,12 +2,6 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
-  
-  
-   
-    <meta name="keywords" content="language" />
-  
   
   <title>Category: language | 梦觉知晓的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,10 +19,10 @@
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的主页" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/Feather.png">
+    <link rel="icon" href="/img/feather.png">
   
   
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
@@ -42,6 +36,7 @@
     <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
   <script>
       var yiliaConfig = {
+          rootUrl: '/',
           fancybox: true,
           animate: true,
           isHome: false,
@@ -59,69 +54,19 @@
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
-        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
         <a href="/" class="profilepic">
             
             <img lazy-src="/img/head.png" class="js-avatar">
             
         </a>
+
         <hgroup>
-          <h1 class="header-author"><a href="/">梦觉知晓</a></h1>
+          <h1 class="header-author"><a href="/" title="Hi Mate">梦觉知晓</a></h1>
         </hgroup>
+
         
         <p class="header-subtitle">这是一个不能停留太久的世界</p>
         
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
         
         
             <div id="switch-btn" class="switch-btn">
@@ -142,6 +87,7 @@
                         
                         
                     </div>
+                    
                 </div>
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
@@ -156,36 +102,46 @@
                 </div>
             </div>
         
+
         <div id="switch-area" class="switch-area">
             <div class="switch-wrap">
                 <section class="switch-part switch-part1">
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a  href="/archives/">所有笔记</a></li>
+                            <li><a href="/archives/">所有笔记</a></li>
                         
-                            <li><a  href="/categories/language/">语言学习</a></li>
+                            <li><a href="/categories/language/">语言学习</a></li>
                         
-                            <li><a  href="/categories/algorithm/">算法学习</a></li>
+                            <li><a href="/categories/algorithm/">算法学习</a></li>
                         
-                            <li><a  href="/categories/life/">生活记事</a></li>
+                            <li><a href="/categories/life/">生活记事</a></li>
                         
-                            <li><a  href="/about/">关于我</a></li>
+                            <li><a href="/about/">关于我</a></li>
                         
                         </ul>
                     </nav>
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl github"  target="_blank" href="https://github.com/CS-Tao" title="github">github</a>
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=990296951@qq.com" title="mail">mail</a>
                             
-                                <a class="fl weibo"  target="_blank" href="http://weibo.com/5636086660/profile" title="weibo">weibo</a>
+                                <a class="fl github" target="_blank" href="https://github.com/CS-Tao" title="github">github</a>
                             
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/tao-chun-sheng-21/activities" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/tcs990296951" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
                             
                         </ul>
                     </nav>
                 </section>
+                
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
@@ -194,30 +150,27 @@
                 </section>
                 
                 
+                
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://CS-Tao.github.io/">name</a>
                     
                     </div>
                 </section>
                 
+
                 
             </div>
         </div>
-    </header>
+    </header>                
 </div>
-
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">梦觉知晓</a></h1>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">梦觉知晓</a></h1>
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
@@ -227,7 +180,7 @@
                 
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">梦觉知晓</a></h1>
+              <h1 class="header-author"><a href="/" title="Me">梦觉知晓</a></h1>
             </hgroup>
             
             <p class="header-subtitle">这是一个不能停留太久的世界</p>
@@ -251,11 +204,19 @@
             <nav class="header-nav">
                 <div class="social">
                     
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=990296951@qq.com" title="mail">mail</a>
+                    
                         <a class="github" target="_blank" href="https://github.com/CS-Tao" title="github">github</a>
                     
-                        <a class="weibo" target="_blank" href="http://weibo.com/5636086660/profile" title="weibo">weibo</a>
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/tao-chun-sheng-21/activities" title="zhihu">zhihu</a>
                     
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                        <a class="weibo" target="_blank" href="http://weibo.com/tcs990296951" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
                     
                 </div>
             </nav>
@@ -271,7 +232,7 @@
       
       <section class="archives-wrap">
         <div class="archive-year-wrap">
-          <a  href="/archives/2017" class="archive-year">2017</a>
+          <a href="/archives/2017" class="archive-year">2017</a>
         </div>
         <div class="archives">
     
@@ -279,18 +240,16 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a  href="/2017/08/17/GMap-net-for-WPF添加自定义图标并设定相对位置/" class="archive-article-date">
+              <a href="/2017/08/17/GMap-net-for-WPF添加自定义图标并设定相对位置/" class="archive-article-date">
       <time datetime="2017-08-16T18:16:06.000Z" itemprop="datePublished">08-17</time>
 </a>
-
         </div>
          
   
     <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2017/08/17/GMap-net-for-WPF添加自定义图标并设定相对位置/">GMap.net for WPF添加自定义图标并设定相对位置</a>
+      <a class="archive-article-title" href="/2017/08/17/GMap-net-for-WPF添加自定义图标并设定相对位置/">GMap.net for WPF添加自定义图标并设定相对位置</a>
     </h1>
   
-
 
         <div class="article-info info-on-archive">
           
@@ -312,7 +271,6 @@
 
     
 
-
 </div>
       <footer id="footer">
     <div class="outer">
@@ -321,20 +279,40 @@
                 &copy; 2017 梦觉知晓
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
             </div>
         </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >网站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页访问量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
     </div>
 </footer>
 
     </div>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 <script src="/js/main.js"></script>
 
     <script>
         $(document).ready(function() {
-            var backgroundnum = 4;
+            var backgroundnum = 10;
             var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
             $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
             $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
@@ -342,52 +320,7 @@
     </script>
 
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'xxxxx', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">
@@ -404,7 +337,7 @@ MathJax.Hub.Queue(function() {
 </script>
 
     <button class="hide-labels">TAG 开关</button>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
     </script>
     <script>
         $(document).ready(function() {
@@ -424,6 +357,7 @@ MathJax.Hub.Queue(function() {
             var title = a.attr('title');
             if (title == undefined || title == "") return;
             a.data('title', title).removeAttr('title').hover(
+
             function() {
                 var offset = a.offset();
                 $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
