@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://cs-tao.github.io/2017/08/17/hello-world/</loc>
+    <lastmod>2017-08-17T21:14:34.487Z</lastmod>
+    <data>
+        <display>
+        <title>如何发表文章</title>
+        <pubTime>2017-08-16T21:24:42.066Z</pubTime>
+        
+        <tag>others</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://cs-tao.github.io/2017/08/17/%E6%9A%91%E5%81%87%E6%97%85%E6%B8%B8%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2017-08-17T20:48:20.172Z</lastmod>
     <data>
@@ -37,23 +54,6 @@
              
               <breadCrumb title="algorithm" url="https://cs-tao.github.io/categories/algorithm/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/17/hello-world/</loc>
-    <lastmod>2017-08-16T18:54:01.422Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2017-08-16T21:24:42.066Z</pubTime>
-        
-        <tag>others</tag>
-         
-         
-           
         </display>
     </data>
     </url>
