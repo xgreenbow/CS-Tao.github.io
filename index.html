@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>梦觉知晓的主页</title>
+  <title>梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="梦觉知晓的博客主页">
 <meta property="og:type" content="website">
-<meta property="og:title" content="梦觉知晓的主页">
+<meta property="og:title" content="梦觉知晓的博客">
 <meta property="og:url" content="https://cs-tao.github.io/index.html">
-<meta property="og:site_name" content="梦觉知晓的主页">
+<meta property="og:site_name" content="梦觉知晓的博客">
 <meta property="og:description" content="梦觉知晓的博客主页">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梦觉知晓的主页">
+<meta name="twitter:title" content="梦觉知晓的博客">
 <meta name="twitter:description" content="梦觉知晓的博客主页">
   
-    <link rel="alternative" href="/atom.xml" title="梦觉知晓的主页" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/feather.png">
@@ -553,33 +553,33 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2017 梦觉知晓
+                &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
             </div>
         </div>
-        
+        <% if (theme.visit_counter.on) { %>
             <div class="visit">
-                
+                <% if (theme.visit_counter.site_visit) { %>
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >网站访问量: 
+                        <span id="site-visit" ><%= theme.visit_counter.site_visit %>: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
-                
-                
+                <% } %>
+                <% if (theme.visit_counter.site_visit && theme.visit_counter.page_visit) { %>
                     <span>, </span>
-                
-                
+                <% } %>
+                <% if (theme.visit_counter.page_visit) { %>
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页访问量: 
+                        <span id="page-visit"><%= theme.visit_counter.page_visit %>: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
-                
+                <% } %>
             </div>
-        
+        <% } %>
     </div>
 </footer>
 
