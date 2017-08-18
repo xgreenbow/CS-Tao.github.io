@@ -77,7 +77,7 @@
         
         
             <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
             </form>
             <div id="local-search-result"></div>
         
@@ -94,7 +94,7 @@
                         return matchData;
                     }
                     var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
+                    var $resultContent = $('#search');
                     $input.keyup(function(){
                         $.ajax({
                             url: '/search.json',
