@@ -46,7 +46,7 @@
           isCategory: false,
           open_in_new: false
       }
-  </script>
+</script>
 </head>
 <body>
   <div id="container">
@@ -54,12 +54,12 @@
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
         <a href="/" class="profilepic">
             
             <img lazy-src="/img/head.png" class="js-avatar">
             
         </a>
-
         <hgroup>
           <h1 class="header-author"><a href="/" title="Hi Mate">梦觉知晓</a></h1>
         </hgroup>
@@ -67,6 +67,57 @@
         
         <p class="header-subtitle">这是一个不能停留太久的世界</p>
         
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#search');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
         
         
             <div id="switch-btn" class="switch-btn">
@@ -111,6 +162,10 @@
                         
                             <li><a href="/archives/">所有笔记</a></li>
                         
+                            <li><a href="/categories/software/">软件开发</a></li>
+                        
+                            <li><a href="/categories/web/">前端开发</a></li>
+                        
                             <li><a href="/categories/language/">语言学习</a></li>
                         
                             <li><a href="/categories/algorithm/">算法学习</a></li>
@@ -145,7 +200,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Program/" style="font-size: 10px;">Program</a> <a href="/tags/others/" style="font-size: 10px;">others</a>
+                        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Github-VS/" style="font-size: 10px;">Git Github VS</a> <a href="/tags/Github-Git/" style="font-size: 10px;">Github Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 15px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a>
                     </div>
                 </section>
                 
@@ -189,6 +244,10 @@
                 <ul>
                 
                     <li><a href="/archives/">所有笔记</a></li>
+                
+                    <li><a href="/categories/software/">软件开发</a></li>
+                
+                    <li><a href="/categories/web/">前端开发</a></li>
                 
                     <li><a href="/categories/language/">语言学习</a></li>
                 
@@ -240,23 +299,307 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2017/08/17/hello-world/" class="archive-article-date">
-      <time datetime="2017-08-16T21:24:42.066Z" itemprop="datePublished">08-17</time>
+              <a href="/2017/08/19/Android学习心得/" class="archive-article-date">
+      <time datetime="2017-08-18T16:42:08.000Z" itemprop="datePublished">08-19</time>
 </a>
         </div>
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/17/hello-world/">如何发表文章</a>
+      <a class="archive-article-title" href="/2017/08/19/Android学习心得/">Android学习心得</a>
     </h1>
   
 
         <div class="article-info info-on-archive">
           
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/language/">language</a>
+    </div>
+
 
           
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/others/">others</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AndroidStudio/">AndroidStudio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/" class="archive-article-date">
+      <time datetime="2017-08-18T16:41:35.000Z" itemprop="datePublished">08-19</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/">GIS-for-Web应用开发之道-学习心得</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/">GIS</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/19/git学习心得/" class="archive-article-date">
+      <time datetime="2017-08-18T16:39:49.000Z" itemprop="datePublished">08-19</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/19/git学习心得/">git学习心得</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/software/">software</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/19/在VS中使用Github/" class="archive-article-date">
+      <time datetime="2017-08-18T16:39:34.000Z" itemprop="datePublished">08-19</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/19/在VS中使用Github/">在VS中使用Github</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/software/">software</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git-Github-VS/">Git Github VS</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/19/Github使用指南/" class="archive-article-date">
+      <time datetime="2017-08-18T16:39:07.000Z" itemprop="datePublished">08-19</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/19/Github使用指南/">Github使用指南</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/software/">software</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-Git/">Github Git</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/19/C-中await和async/" class="archive-article-date">
+      <time datetime="2017-08-18T16:38:21.000Z" itemprop="datePublished">08-19</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/19/C-中await和async/">C#中await和async</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/language/">language</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/19/Wpf使用MahApp-Metro主题/" class="archive-article-date">
+      <time datetime="2017-08-18T16:21:28.000Z" itemprop="datePublished">08-19</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/19/Wpf使用MahApp-Metro主题/">Wpf使用MahApp.Metro主题</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/language/">language</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xaml/">Xaml</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/18/GMap-net-for-WPF-使用心得/" class="archive-article-date">
+      <time datetime="2017-08-18T15:45:14.000Z" itemprop="datePublished">08-18</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/18/GMap-net-for-WPF-使用心得/">GMap.net for WPF 使用心得</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/software/">software</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GMap-net/">GMap.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Project/">Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/08/18/如何利用hexo发表文章/" class="archive-article-date">
+      <time datetime="2017-08-18T04:36:59.561Z" itemprop="datePublished">08-18</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/08/18/如何利用hexo发表文章/">如何利用hexo发表文章</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/web/">web</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
 
         </div>
@@ -285,104 +628,7 @@
         <div class="article-info info-on-archive">
           
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/life/">life</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/" class="archive-article-date">
-      <time datetime="2017-08-16T18:25:00.000Z" itemprop="datePublished">08-17</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/">ISODATA算法学习心得及非监督分类软件得商业化界面实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Program/">Program</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/17/GMap-net-for-WPF添加自定义图标并设定相对位置/" class="archive-article-date">
-      <time datetime="2017-08-16T18:16:06.000Z" itemprop="datePublished">08-17</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/17/GMap-net-for-WPF添加自定义图标并设定相对位置/">GMap.net for WPF添加自定义图标并设定相对位置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/language/">language</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/17/about-me/" class="archive-article-date">
-      <time datetime="2017-08-16T17:39:53.000Z" itemprop="datePublished">08-17</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/17/about-me/">简介-自我介绍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/about/">about</a>
+    <a class="article-category-link" href="/categories/Life/">Life</a>
     </div>
 
 
@@ -398,6 +644,10 @@
   
 
     
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
+    </nav>
+  
 
 </div>
       <footer id="footer">
@@ -449,6 +699,16 @@
 
 
 
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?60c849aef33194f2884736dfb3f0b518";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
 
 
 <div class="scroll" id="scroll">
@@ -504,6 +764,23 @@
     });
 </script>
 
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
 
   </div>
 </body>
