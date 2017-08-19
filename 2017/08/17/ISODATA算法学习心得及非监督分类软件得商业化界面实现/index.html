@@ -5,18 +5,18 @@
   
   <title>ISODATA算法学习心得及非监督分类软件得商业化界面实现 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ISODATA算法介绍ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续… 商业化界面的实现采用Winform实现。待续">
+  <meta name="description" content="ISODATA和Winform      姚剑老师模式识别作业，代码已托管至Github">
 <meta name="keywords" content="C#,WinForm,ISODATA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ISODATA算法学习心得及非监督分类软件得商业化界面实现">
 <meta property="og:url" content="https://cs-tao.github.io/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
-<meta property="og:description" content="ISODATA算法介绍ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续… 商业化界面的实现采用Winform实现。待续">
+<meta property="og:description" content="ISODATA和Winform      姚剑老师模式识别作业，代码已托管至Github">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-19T03:53:56.581Z">
+<meta property="og:updated_time" content="2017-08-19T06:31:33.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ISODATA算法学习心得及非监督分类软件得商业化界面实现">
-<meta name="twitter:description" content="ISODATA算法介绍ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续… 商业化界面的实现采用Winform实现。待续">
+<meta name="twitter:description" content="ISODATA和Winform      姚剑老师模式识别作业，代码已托管至Github">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Github-VS/" style="font-size: 10px;">Git Github VS</a> <a href="/tags/Github-Git/" style="font-size: 10px;">Github Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 15px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a>
+                        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git-Github/" style="font-size: 10px;">Git Github</a> <a href="/tags/Git-Github-VS/" style="font-size: 10px;">Git Github VS</a> <a href="/tags/Github-Git/" style="font-size: 10px;">Github Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 15px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a>
                     </div>
                 </section>
                 
@@ -316,9 +316,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="ISODATA算法介绍"><a href="#ISODATA算法介绍" class="headerlink" title="ISODATA算法介绍"></a>ISODATA算法介绍</h3><p>ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续…</p>
-<h3 id="商业化界面的实现"><a href="#商业化界面的实现" class="headerlink" title="商业化界面的实现"></a>商业化界面的实现</h3><p>采用Winform实现。待续…</p>
+        <p><strong> ISODATA和Winform </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    <a href="http://www.scholat.com/jianyao" title="Jian Yao" target="_blank" rel="external">姚剑老师</a>模式识别作业，代码已托管至<a href="https://github.com/CS-Tao/ImageFactory" title="ImageFactory" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
 
+<h3 id="ISODATA算法介绍"><a href="#ISODATA算法介绍" class="headerlink" title="ISODATA算法介绍"></a>ISODATA算法介绍</h3><p>ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续…</p>
+<h3 id="商业化界面的实现"><a href="#商业化界面的实现" class="headerlink" title="商业化界面的实现"></a>商业化界面的实现</h3><p>采用Winform实现。待续…</p>
+</the>
       
       
     </div>
@@ -330,7 +333,7 @@
         <p><span>本文标题:</span><a href="/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/">ISODATA算法学习心得及非监督分类软件得商业化界面实现</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
         <p><span>发布时间:</span>2017年08月17日 - 02时25分</p>
-        <p><span>最后更新:</span>2017年08月19日 - 11时53分</p>
+        <p><span>最后更新:</span>2017年08月19日 - 14时31分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/" title="ISODATA算法学习心得及非监督分类软件得商业化界面实现">https://cs-tao.github.io/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/</a>
             <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-08-18T16:52:26.583Z</updated>
+  <updated>2017-08-19T06:40:58.558Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -20,9 +20,15 @@
     <link href="https://cs-tao.github.io/2017/08/19/Android%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
     <id>https://cs-tao.github.io/2017/08/19/Android学习心得/</id>
     <published>2017-08-18T16:42:08.000Z</published>
-    <updated>2017-08-18T16:52:26.583Z</updated>
+    <updated>2017-08-19T06:40:58.558Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 参加四维图新地图制图大赛，写了个了Android App，现在把学到的知识记录一下 </strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+</the>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 参加四维图新地图制图大赛，写了个了Android App，现在把学到的知识记录一下 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -42,9 +48,14 @@
     <link href="https://cs-tao.github.io/2017/08/19/GIS-for-Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E4%B9%8B%E9%81%93-%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
     <id>https://cs-tao.github.io/2017/08/19/GIS-for-Web应用开发之道-学习心得/</id>
     <published>2017-08-18T16:41:35.000Z</published>
-    <updated>2017-08-18T16:52:28.785Z</updated>
+    <updated>2017-08-19T06:20:06.308Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> GIS-for-Web应用开发之道 读书心得 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    在此感谢<a href="GIS-for-Web应用开发之道" title="Chaogui Kang">康导</a>的指导<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文=""></the>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; GIS-for-Web应用开发之道 读书心得 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    在此感谢&lt;a href=&quot;GIS-for-Web应用开发之道&quot; title=&quot;Chaogui Kang&quot;&gt;康导&lt;/a&gt;的指导&lt;br&gt;
     
     </summary>
     
@@ -60,16 +71,21 @@
     <link href="https://cs-tao.github.io/2017/08/19/git%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/"/>
     <id>https://cs-tao.github.io/2017/08/19/git学习心得/</id>
     <published>2017-08-18T16:39:49.000Z</published>
-    <updated>2017-08-18T16:52:28.167Z</updated>
+    <updated>2017-08-19T06:36:52.054Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> git命令行学习小记 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    利用git命令行托管代码到github，搭建自己的git服务<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文=""></the>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; git命令行学习小记 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    利用git命令行托管代码到github，搭建自己的git服务&lt;br&gt;
     
     </summary>
     
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
+      <category term="Git Github" scheme="https://cs-tao.github.io/tags/Git-Github/"/>
     
   </entry>
   
@@ -78,9 +94,14 @@
     <link href="https://cs-tao.github.io/2017/08/19/%E5%9C%A8VS%E4%B8%AD%E4%BD%BF%E7%94%A8Github/"/>
     <id>https://cs-tao.github.io/2017/08/19/在VS中使用Github/</id>
     <published>2017-08-18T16:39:34.000Z</published>
-    <updated>2017-08-18T16:52:30.168Z</updated>
+    <updated>2017-08-19T06:42:56.547Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> vs中使用GitHub的方法 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    将VS工程代码提交到github或自己的git服务<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文=""></the>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; vs中使用GitHub的方法 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    将VS工程代码提交到github或自己的git服务&lt;br&gt;
     
     </summary>
     
@@ -96,9 +117,14 @@
     <link href="https://cs-tao.github.io/2017/08/19/Github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     <id>https://cs-tao.github.io/2017/08/19/Github使用指南/</id>
     <published>2017-08-18T16:39:07.000Z</published>
-    <updated>2017-08-18T16:52:29.498Z</updated>
+    <updated>2017-08-19T06:26:45.649Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 前几个月学习了Github的使用，希望我的经验能帮助到所有希望了解Github的人 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    感谢在我迷惑的时候有<a href="https://github.com/HPDell" title="HPDell" target="_blank" rel="external">师兄</a>的指点。<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文=""></the>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 前几个月学习了Github的使用，希望我的经验能帮助到所有希望了解Github的人 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    感谢在我迷惑的时候有&lt;a href=&quot;https://github.com/HPDell&quot; title=&quot;HPDell&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;师兄&lt;/a&gt;的指点。&lt;br&gt;
     
     </summary>
     
@@ -114,9 +140,15 @@
     <link href="https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/"/>
     <id>https://cs-tao.github.io/2017/08/19/C-中await和async/</id>
     <published>2017-08-18T16:38:21.000Z</published>
-    <updated>2017-08-18T16:52:27.472Z</updated>
+    <updated>2017-08-19T06:20:13.967Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> C#中await和async使用介绍 </strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+</the>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; C#中await和async使用介绍 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -132,9 +164,14 @@
     <link href="https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/"/>
     <id>https://cs-tao.github.io/2017/08/19/Wpf使用MahApp-Metro主题/</id>
     <published>2017-08-18T16:21:28.000Z</published>
-    <updated>2017-08-18T16:27:42.057Z</updated>
+    <updated>2017-08-19T06:33:44.168Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> Wpf使用MahApp.Metro主题的步骤小记 </strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文=""></the>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; Wpf使用MahApp.Metro主题的步骤小记 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -154,15 +191,15 @@
     <link href="https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
     <id>https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-使用心得/</id>
     <published>2017-08-18T15:45:14.000Z</published>
-    <updated>2017-08-19T05:32:22.546Z</updated>
+    <updated>2017-08-19T06:26:43.650Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> GMap.net for WPF </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    GMap.net for WPF 使用心得<br><a id="more"></a></excerpt></p>
+    <content type="html"><![CDATA[<p><strong> GMap.net for WPF </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    利用GMap.net for WPF绘制点线面的方式以及各要素之间相对定位的方式<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <h3 id="GMap-net概述"><a href="#GMap-net概述" class="headerlink" title="GMap.net概述"></a>GMap.net概述</h3><p><a href="https://greatmaps.codeplex.com/" title="进入GMap.NET的项目地址" target="_blank" rel="external">GMap.net</a>是一个强大、免费、跨平台、开源的.NET控件，它在WinForm和WPF环境中能够通过Google, Yahoo!, Bing, OpenStreetMap, ArcGIS, Pergo, SigPac等实现寻找路径、地理编码以及地图展示功能，并支持缓存和运行在Mobile环境中。<br>GMap.NET是一个开源的GEO地图定位和跟踪程序。就像谷歌地图、雅虎地图一样，可以自动计算两地的距离，定位经纬度，与Google地图不同的是，该项目是建立在WinForm框架或WPF框架基础上的。可以对地图放大缩小，进行城市标记等。<br>  <br></p>
 <h3 id="GMap-net-for-WPF-绘制地理要素"><a href="#GMap-net-for-WPF-绘制地理要素" class="headerlink" title="GMap.net for WPF 绘制地理要素"></a>GMap.net for WPF 绘制地理要素</h3><p>因为现在正在利用GMap.net for WPF写一个项目，所以我对WPF版本更加熟悉，如有错误或不当之处，还望指出，共同进步！</p>
 <ul>
-<li><p>不同于Winform版本，WPF版本没有图层的概念，但用于显示地理要素的对象GMapMarker提供了Zindex属性，该属性值大的会遮盖属性值小的。所以大家可以利用Zindex对地理要素建立逻辑上的图层关联。</p>
+<li><p>不同于Winform版本，WPF版本没有图层的概念，但用于显示要素的对象GMapMarker提供了Zindex属性，该属性值大的会遮盖属性值小的。所以大家可以利用Zindex对地理要素建立逻辑上的图层关联。</p>
 </li>
 <li><p>WinForm版本绘图可以直接在显示对象上设置图形的属性，如：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">GMapPolygon polygon = new GMapPolygon(pointList, &quot;Polygon&quot;);</div><div class="line">&#123;</div><div class="line">    polygon.IsHitTestVisible = true;</div><div class="line">    polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.Red));</div><div class="line">    polygon.Stroke = new Pen(Color.Blue, 2);</div><div class="line">&#125;</div><div class="line">overlay.Polygons.Add(polygon);</div></pre></td></tr></table></figure>
@@ -184,7 +221,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; GMap.net for WPF &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    GMap.net for WPF 使用心得&lt;br&gt;
+      &lt;p&gt;&lt;strong&gt; GMap.net for WPF &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    利用GMap.net for WPF绘制点线面的方式以及各要素之间相对定位的方式&lt;br&gt;
     
     </summary>
     
@@ -206,12 +243,12 @@
     <link href="https://cs-tao.github.io/2017/08/18/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8hexo%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/"/>
     <id>https://cs-tao.github.io/2017/08/18/如何利用hexo发表文章/</id>
     <published>2017-08-18T04:36:59.561Z</published>
-    <updated>2017-08-18T17:13:56.932Z</updated>
+    <updated>2017-08-19T06:40:56.206Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> 如何利用hexo发表文章 </strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+    <content type="html"><![CDATA[<p><strong> 如何利用hexo发表文章 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    本文修改自<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>自动创建的Hello-World.md，Hexo代码开源。详见<a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">GitHub</a>。<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<p>本文修改自<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>的Hello World界面，Hexo代码开源。详见<a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">GitHub</a>。</p>
+<p>本文修改自<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>自动创建的Hello-World.md，Hexo代码开源。详见<a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">GitHub</a>。</p>
 <h2 id="新建文章并发表"><a href="#新建文章并发表" class="headerlink" title="新建文章并发表"></a>新建文章并发表</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"新文章"</span></div></pre></td></tr></table></figure>
 <h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><p>详见：Hexo<a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">官方文档</a></p>
 <h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
@@ -224,7 +261,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; 如何利用hexo发表文章 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;
+      &lt;p&gt;&lt;strong&gt; 如何利用hexo发表文章 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    本文修改自&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;自动创建的Hello-World.md，Hexo代码开源。详见&lt;a href=&quot;https://github.com/hexojs/hexo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;。&lt;br&gt;
     
     </summary>
     
@@ -240,19 +277,21 @@
     <link href="https://cs-tao.github.io/2017/08/17/%E6%9A%91%E5%81%87%E6%97%85%E6%B8%B8%E7%AC%94%E8%AE%B0/"/>
     <id>https://cs-tao.github.io/2017/08/17/暑假旅游笔记/</id>
     <published>2017-08-16T18:45:12.000Z</published>
-    <updated>2017-08-18T16:52:17.114Z</updated>
+    <updated>2017-08-19T06:42:57.693Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="起点：彭水"><a href="#起点：彭水" class="headerlink" title="起点：彭水"></a>起点：彭水</h2><p>两个傻子在网上订了车票，到了车站发现并没有预定成功，再预定时发现已经没有到涪陵的车票，还好女票机智的买了到武隆的车票，到涪陵后补票，成功到达涪陵。</p>
-<h2 id="第一站：涪陵"><a href="#第一站：涪陵" class="headerlink" title="第一站：涪陵"></a>第一站：涪陵</h2><p>待续…</p>
-<h2 id="第二站：重庆"><a href="#第二站：重庆" class="headerlink" title="第二站：重庆"></a>第二站：重庆</h2><p>待续…</p>
-<h2 id="第三站：成都"><a href="#第三站：成都" class="headerlink" title="第三站：成都"></a>第三站：成都</h2><p>待续…</p>
-<h2 id="第四站：重庆"><a href="#第四站：重庆" class="headerlink" title="第四站：重庆"></a>第四站：重庆</h2><p>待续…</p>
-<h2 id="终点：彭水"><a href="#终点：彭水" class="headerlink" title="终点：彭水"></a>终点：彭水</h2><p>待续…</p>
+    <content type="html"><![CDATA[<p><strong> 暑假旅行笔记 </strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="起点：彭水"><a href="#起点：彭水" class="headerlink" title="起点：彭水"></a>起点：彭水</h2><p>持续更新…</p>
+<h2 id="第一站：涪陵"><a href="#第一站：涪陵" class="headerlink" title="第一站：涪陵"></a>第一站：涪陵</h2><p>持续更新…</p>
+<h2 id="第二站：重庆"><a href="#第二站：重庆" class="headerlink" title="第二站：重庆"></a>第二站：重庆</h2><p>持续更新…</p>
+<h2 id="第三站：成都"><a href="#第三站：成都" class="headerlink" title="第三站：成都"></a>第三站：成都</h2><p>持续更新…</p>
+<h2 id="第四站：重庆"><a href="#第四站：重庆" class="headerlink" title="第四站：重庆"></a>第四站：重庆</h2><p>持续更新…</p>
+<h2 id="终点：彭水"><a href="#终点：彭水" class="headerlink" title="终点：彭水"></a>终点：彭水</h2><p>持续更新…</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;起点：彭水&quot;&gt;&lt;a href=&quot;#起点：彭水&quot; class=&quot;headerlink&quot; title=&quot;起点：彭水&quot;&gt;&lt;/a&gt;起点：彭水&lt;/h2&gt;&lt;p&gt;两个傻子在网上订了车票，到了车站发现并没有预定成功，再预定时发现已经没有到涪陵的车票，还好女票机智的买了到武隆的车票
+      &lt;p&gt;&lt;strong&gt; 暑假旅行笔记 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -266,15 +305,18 @@
     <link href="https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/"/>
     <id>https://cs-tao.github.io/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/</id>
     <published>2017-08-16T18:25:00.000Z</published>
-    <updated>2017-08-19T03:53:56.581Z</updated>
+    <updated>2017-08-19T06:31:33.824Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="ISODATA算法介绍"><a href="#ISODATA算法介绍" class="headerlink" title="ISODATA算法介绍"></a>ISODATA算法介绍</h3><p>ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续…</p>
+    <content type="html"><![CDATA[<p><strong> ISODATA和Winform </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    <a href="http://www.scholat.com/jianyao" title="Jian Yao" target="_blank" rel="external">姚剑老师</a>模式识别作业，代码已托管至<a href="https://github.com/CS-Tao/ImageFactory" title="ImageFactory" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h3 id="ISODATA算法介绍"><a href="#ISODATA算法介绍" class="headerlink" title="ISODATA算法介绍"></a>ISODATA算法介绍</h3><p>ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续…</p>
 <h3 id="商业化界面的实现"><a href="#商业化界面的实现" class="headerlink" title="商业化界面的实现"></a>商业化界面的实现</h3><p>采用Winform实现。待续…</p>
-]]></content>
+</the>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;ISODATA算法介绍&quot;&gt;&lt;a href=&quot;#ISODATA算法介绍&quot; class=&quot;headerlink&quot; title=&quot;ISODATA算法介绍&quot;&gt;&lt;/a&gt;ISODATA算法介绍&lt;/h3&gt;&lt;p&gt;ISODATA(Iterative Selforganizing D
+      &lt;p&gt;&lt;strong&gt; ISODATA和Winform &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    &lt;a href=&quot;http://www.scholat.com/jianyao&quot; title=&quot;Jian Yao&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;姚剑老师&lt;/a&gt;模式识别作业，代码已托管至&lt;a href=&quot;https://github.com/CS-Tao/ImageFactory&quot; title=&quot;ImageFactory&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
