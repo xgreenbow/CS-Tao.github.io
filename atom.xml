@@ -191,13 +191,13 @@
     <link href="https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
     <id>https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-使用心得/</id>
     <published>2017-08-18T15:45:14.000Z</published>
-    <updated>2017-08-19T06:26:43.650Z</updated>
+    <updated>2017-08-19T08:33:00.626Z</updated>
     
     <content type="html"><![CDATA[<p><strong> GMap.net for WPF </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    利用GMap.net for WPF绘制点线面的方式以及各要素之间相对定位的方式<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h3 id="GMap-net概述"><a href="#GMap-net概述" class="headerlink" title="GMap.net概述"></a>GMap.net概述</h3><p><a href="https://greatmaps.codeplex.com/" title="进入GMap.NET的项目地址" target="_blank" rel="external">GMap.net</a>是一个强大、免费、跨平台、开源的.NET控件，它在WinForm和WPF环境中能够通过Google, Yahoo!, Bing, OpenStreetMap, ArcGIS, Pergo, SigPac等实现寻找路径、地理编码以及地图展示功能，并支持缓存和运行在Mobile环境中。<br>GMap.NET是一个开源的GEO地图定位和跟踪程序。就像谷歌地图、雅虎地图一样，可以自动计算两地的距离，定位经纬度，与Google地图不同的是，该项目是建立在WinForm框架或WPF框架基础上的。可以对地图放大缩小，进行城市标记等。<br>  <br></p>
-<h3 id="GMap-net-for-WPF-绘制地理要素"><a href="#GMap-net-for-WPF-绘制地理要素" class="headerlink" title="GMap.net for WPF 绘制地理要素"></a>GMap.net for WPF 绘制地理要素</h3><p>因为现在正在利用GMap.net for WPF写一个项目，所以我对WPF版本更加熟悉，如有错误或不当之处，还望指出，共同进步！</p>
+<h2 id="GMap-net概述"><a href="#GMap-net概述" class="headerlink" title="GMap.net概述"></a>GMap.net概述</h2><p><a href="https://greatmaps.codeplex.com/" title="进入GMap.NET的项目地址" target="_blank" rel="external">GMap.net</a>是一个强大、免费、跨平台、开源的.NET控件，它在WinForm和WPF环境中能够通过Google, Yahoo!, Bing, OpenStreetMap, ArcGIS, Pergo, SigPac等实现寻找路径、地理编码以及地图展示功能，并支持缓存和运行在Mobile环境中。<br>GMap.NET是一个开源的GEO地图定位和跟踪程序。就像谷歌地图、雅虎地图一样，可以自动计算两地的距离，定位经纬度，与Google地图不同的是，该项目是建立在WinForm框架或WPF框架基础上的。可以对地图放大缩小，进行城市标记等。<br>  <br></p>
+<h2 id="GMap-net-for-WPF-绘制地理要素"><a href="#GMap-net-for-WPF-绘制地理要素" class="headerlink" title="GMap.net for WPF 绘制地理要素"></a>GMap.net for WPF 绘制地理要素</h2><p>因为现在正在利用GMap.net for WPF写一个项目，所以我对WPF版本更加熟悉，如有错误或不当之处，还望指出，共同进步！</p>
 <ul>
 <li><p>不同于Winform版本，WPF版本没有图层的概念，但用于显示要素的对象GMapMarker提供了Zindex属性，该属性值大的会遮盖属性值小的。所以大家可以利用Zindex对地理要素建立逻辑上的图层关联。</p>
 </li>
@@ -214,7 +214,7 @@
 <li><p>wpf版本只能绘制Point、PolyLine、Polygon三种图形，绘制圆则需要借助多边形的绘制。示例如下：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public void DrawCircle(PointLatLng center, double R)</div><div class="line">&#123;</div><div class="line">    double cartesianCenterX = double.MaxValue;</div><div class="line">    double cartesianCenterY = double.MaxValue;</div><div class="line">    double cartesianCenterZ = double.MaxValue;</div><div class="line"></div><div class="line">    mapControl.MapProvider.Projection.FromGeodeticToCartesian(center.Lat, center.Lng, 0, out cartesianCenterX, out cartesianCenterY, out cartesianCenterZ);//将圆心投影到笛卡尔坐标系</div><div class="line"></div><div class="line">    int pointCount = 200;//用于拟合圆的多边形顶点个数</div><div class="line"></div><div class="line">    List&lt;PointLatLng&gt; polygonPointList = new List&lt;PointLatLng&gt;(pointCount);//用于存放多边形顶点</div><div class="line"></div><div class="line">    double interval = 2 * Math.PI / pointCount;</div><div class="line">    for (double degree = 0; degree &lt; 2 * Math.PI; degree += interval)</div><div class="line">    &#123;</div><div class="line">        double tempX = cartesianCenterX + R * Math.Cos(degree);</div><div class="line">        double tempY = cartesianCenterY + R * Math.Sin(degree);</div><div class="line">        double tempLng = double.MaxValue;</div><div class="line">        double tempLat = double.MaxValue;</div><div class="line">        mapControl.MapProvider.Projection.FromCartesianTGeodetic(tempX, tempY, cartesianCenterZ, out tempLat, out tempLng);//投影到WGS84坐标系</div><div class="line">        polygonPointList.Add(new PointLatLng(tempLat, tempLng));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    GMapPolygon circle = new GMapPolygon(polygonPointList);</div><div class="line">    &#123;</div><div class="line">        circle.ZIndex = (int)LayerIndex.Polygon;</div><div class="line">    &#125;</div><div class="line">    mapControl.Markers.Add(circle);//添加到地图</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>  效果如下：<br>  <img src="/ref-image/GMap-Wpf-Draw-Circle.png" alt="查看图片"><br><br>  因为投影问题，说好的圆变为了椭圆，如果想生成正圆，可以在程序中使用一些WebAPI服务替换GMap的投影服务，我们项目使用的是搭建在自己服务器上的的GeoServer服务。效果如下：<br>  <img src="/ref-image/FGIS-Damage-Circle.png" alt="查看图片"><br><br>  <code>备注：</code>两张图片截图自不同的程序。<br><br></p>
-<h3 id="GMap-net-for-WPF添加自定义图标并设定相对位置"><a href="#GMap-net-for-WPF添加自定义图标并设定相对位置" class="headerlink" title="GMap.net for WPF添加自定义图标并设定相对位置"></a>GMap.net for WPF添加自定义图标并设定相对位置</h3><p><em>持续更新中…</em></p>
+<h2 id="GMap-net-for-WPF添加自定义图标并设定相对位置"><a href="#GMap-net-for-WPF添加自定义图标并设定相对位置" class="headerlink" title="GMap.net for WPF添加自定义图标并设定相对位置"></a>GMap.net for WPF添加自定义图标并设定相对位置</h2><p><em>持续更新中…</em></p>
 </li>
 </ul>
 </the>]]></content>
@@ -243,19 +243,19 @@
     <link href="https://cs-tao.github.io/2017/08/18/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8hexo%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/"/>
     <id>https://cs-tao.github.io/2017/08/18/如何利用hexo发表文章/</id>
     <published>2017-08-18T04:36:59.561Z</published>
-    <updated>2017-08-19T06:40:56.206Z</updated>
+    <updated>2017-08-19T08:32:56.040Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 如何利用hexo发表文章 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    本文修改自<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>自动创建的Hello-World.md，Hexo代码开源。详见<a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">GitHub</a>。<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <p>本文修改自<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>自动创建的Hello-World.md，Hexo代码开源。详见<a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">GitHub</a>。</p>
-<h2 id="新建文章并发表"><a href="#新建文章并发表" class="headerlink" title="新建文章并发表"></a>新建文章并发表</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"新文章"</span></div></pre></td></tr></table></figure>
-<h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><p>详见：Hexo<a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">官方文档</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<h2 id="新建文章并发表"><a href="#新建文章并发表" class="headerlink" title="新建文章并发表"></a>新建文章并发表</h2><h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"新文章"</span></div></pre></td></tr></table></figure>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>详见：Hexo<a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">官方文档</a></p>
+<h2 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>详见：Hexo<a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">官方文档</a></p>
-<h3 id="启动hexo服务"><a href="#启动hexo服务" class="headerlink" title="启动hexo服务"></a>启动hexo服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<h2 id="启动hexo服务"><a href="#启动hexo服务" class="headerlink" title="启动hexo服务"></a>启动hexo服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>详见：Hexo<a href="https://hexo.io/docs/server.html" target="_blank" rel="external">官方文档</a></p>
-<h3 id="部署到远程"><a href="#部署到远程" class="headerlink" title="部署到远程"></a>部署到远程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<h2 id="部署到远程"><a href="#部署到远程" class="headerlink" title="部署到远程"></a>部署到远程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>Hexo<a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">官方文档</a></p>
 </the>]]></content>
     
