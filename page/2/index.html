@@ -61,23 +61,69 @@
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
+        <script src="/static/api/js/search/jquery-1.9.1.min.js.js"></script>
         <a href="/" class="profilepic">
             
             <img lazy-src="/img/head.png" class="js-avatar">
             
         </a>
-
         <hgroup>
           <h1 class="header-author"><a href="/" title="Hi Mate">梦觉知晓</a></h1>
         </hgroup>
-
         
         <p class="header-subtitle">这是一个不能停留太久的世界</p>
         
         
             <form>
-                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
             </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-input');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
         
         
             <div id="switch-btn" class="switch-btn">
@@ -98,7 +144,6 @@
                         
                         
                     </div>
-                    
                 </div>
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
@@ -113,7 +158,6 @@
                 </div>
             </div>
         
-
         <div id="switch-area" class="switch-area">
             <div class="switch-wrap">
                 <section class="switch-part switch-part1">
@@ -127,8 +171,6 @@
                             <li><a href="/categories/web/">前端开发</a></li>
                         
                             <li><a href="/categories/language/">语言学习</a></li>
-                        
-                            <li><a href="/categories/algorithm/">算法学习</a></li>
                         
                             <li><a href="/categories/life/">生活记事</a></li>
                         
@@ -157,13 +199,11 @@
                     </nav>
                 </section>
                 
-                
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
                         <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Github-VS/" style="font-size: 10px;">Git Github VS</a> <a href="/tags/Github-Git/" style="font-size: 10px;">Github Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 15px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a>
                     </div>
                 </section>
-                
                 
                 
                 <section class="switch-part switch-part3">
@@ -174,7 +214,6 @@
                     </div>
                 </section>
                 
-
                 
             </div>
         </div>
@@ -210,8 +249,6 @@
                     <li><a href="/categories/web/">前端开发</a></li>
                 
                     <li><a href="/categories/language/">语言学习</a></li>
-                
-                    <li><a href="/categories/algorithm/">算法学习</a></li>
                 
                     <li><a href="/categories/life/">生活记事</a></li>
                 
@@ -282,7 +319,7 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="article-category-link" href="/categories/software/">software</a>
     </div>
 
 
@@ -321,7 +358,7 @@
                 &copy; 2017 梦觉知晓
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> <a href="https://cs-tao.github.io/" target="_blank">CS-Tao</a>
             </div>
         </div>
         
@@ -349,7 +386,7 @@
 </footer>
 
     </div>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 <script src="/js/main.js"></script>
 
     <script>
@@ -430,23 +467,6 @@ ga('send', 'pageview');
     });
 </script>
 
-
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
-        }
-      }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
-      }
-    </script>
 
   </div>
 </body>

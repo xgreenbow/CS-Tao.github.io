@@ -154,7 +154,7 @@
     <link href="https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
     <id>https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-使用心得/</id>
     <published>2017-08-18T15:45:14.000Z</published>
-    <updated>2017-08-18T17:13:32.231Z</updated>
+    <updated>2017-08-19T05:32:22.546Z</updated>
     
     <content type="html"><![CDATA[<p><strong> GMap.net for WPF </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    GMap.net for WPF 使用心得<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -176,7 +176,7 @@
 </li>
 <li><p>wpf版本只能绘制Point、PolyLine、Polygon三种图形，绘制圆则需要借助多边形的绘制。示例如下：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public void DrawCircle(PointLatLng center, double R)</div><div class="line">&#123;</div><div class="line">    double cartesianCenterX = double.MaxValue;</div><div class="line">    double cartesianCenterY = double.MaxValue;</div><div class="line">    double cartesianCenterZ = double.MaxValue;</div><div class="line"></div><div class="line">    mapControl.MapProvider.Projection.FromGeodeticToCartesian(center.Lat, center.Lng, 0, out cartesianCenterX, out cartesianCenterY, out cartesianCenterZ);//将圆心投影到笛卡尔坐标系</div><div class="line"></div><div class="line">    int pointCount = 200;//用于拟合圆的多边形顶点个数</div><div class="line"></div><div class="line">    List&lt;PointLatLng&gt; polygonPointList = new List&lt;PointLatLng&gt;(pointCount);//用于存放多边形顶点</div><div class="line"></div><div class="line">    double interval = 2 * Math.PI / pointCount;</div><div class="line">    for (double degree = 0; degree &lt; 2 * Math.PI; degree += interval)</div><div class="line">    &#123;</div><div class="line">        double tempX = cartesianCenterX + R * Math.Cos(degree);</div><div class="line">        double tempY = cartesianCenterY + R * Math.Sin(degree);</div><div class="line">        double tempLng = double.MaxValue;</div><div class="line">        double tempLat = double.MaxValue;</div><div class="line">        mapControl.MapProvider.Projection.FromCartesianTGeodetic(tempX, tempY, cartesianCenterZ, out tempLat, out tempLng);//投影到WGS84坐标系</div><div class="line">        polygonPointList.Add(new PointLatLng(tempLat, tempLng));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    GMapPolygon circle = new GMapPolygon(polygonPointList);</div><div class="line">    &#123;</div><div class="line">        circle.ZIndex = (int)LayerIndex.Polygon;</div><div class="line">    &#125;</div><div class="line">    mapControl.Markers.Add(circle);//添加到地图</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  效果如下：<br>  <img src="http://thumbnail0.baidupcs.com/thumbnail/2cf77414c3501f3880426eaff405ce6c?fid=1130073879-250528-937210942035402&amp;time=1503064800&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-bBW846ERDKUQbnY1VTIaFzZFHzk%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5332924838473930470&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="查看图片"><br><br>  因为投影问题，说好的圆变为了椭圆，如果想生成正圆，可以在程序中使用一些WebAPI服务替换GMap的投影服务，我们项目使用的是搭建在自己服务器上的的GeoServer服务。效果如下：<br>  <img src="http://thumbnail0.baidupcs.com/thumbnail/c6907142f196bfbc0fe290a3dc4136e0?fid=1130073879-250528-33867141375828&amp;time=1503068400&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-2t3zoJlKcPpKvGzwyo%2BAVDGUfuA%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5333807984492037063&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="查看图片"><br><br>  <code>备注：</code>两张图片截图自不同的程序。<br><br></p>
+<p>  效果如下：<br>  <img src="/ref-image/GMap-Wpf-Draw-Circle.png" alt="查看图片"><br><br>  因为投影问题，说好的圆变为了椭圆，如果想生成正圆，可以在程序中使用一些WebAPI服务替换GMap的投影服务，我们项目使用的是搭建在自己服务器上的的GeoServer服务。效果如下：<br>  <img src="/ref-image/FGIS-Damage-Circle.png" alt="查看图片"><br><br>  <code>备注：</code>两张图片截图自不同的程序。<br><br></p>
 <h3 id="GMap-net-for-WPF添加自定义图标并设定相对位置"><a href="#GMap-net-for-WPF添加自定义图标并设定相对位置" class="headerlink" title="GMap.net for WPF添加自定义图标并设定相对位置"></a>GMap.net for WPF添加自定义图标并设定相对位置</h3><p><em>持续更新中…</em></p>
 </li>
 </ul>
@@ -193,9 +193,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
-    
       <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
+    
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
@@ -266,7 +266,7 @@
     <link href="https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/"/>
     <id>https://cs-tao.github.io/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/</id>
     <published>2017-08-16T18:25:00.000Z</published>
-    <updated>2017-08-18T16:52:19.050Z</updated>
+    <updated>2017-08-19T03:53:56.581Z</updated>
     
     <content type="html"><![CDATA[<h3 id="ISODATA算法介绍"><a href="#ISODATA算法介绍" class="headerlink" title="ISODATA算法介绍"></a>ISODATA算法介绍</h3><p>ISODATA(Iterative Selforganizing Data Analysis Techniques Algorithm)算法，即迭代自组织数据分析算法。该算法是在k-均值算法的基础上，增加对聚类结果的“合并”和“分裂”两个操作，并设定算法运行控制参数的一种聚类算法。迭代次数会影响最终结果，迭代参数选择很重要。待续…</p>
 <h3 id="商业化界面的实现"><a href="#商业化界面的实现" class="headerlink" title="商业化界面的实现"></a>商业化界面的实现</h3><p>采用Winform实现。待续…</p>
@@ -278,7 +278,7 @@
     
     </summary>
     
-      <category term="algorithm" scheme="https://cs-tao.github.io/categories/algorithm/"/>
+      <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>

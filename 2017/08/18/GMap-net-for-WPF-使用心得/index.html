@@ -6,20 +6,20 @@
   <title>GMap.net for WPF 使用心得 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="GMap.net for WPF      GMap.net for WPF 使用心得">
-<meta name="keywords" content="C#,Project,Wpf,GMap.net">
+<meta name="keywords" content="C#,Wpf,Project,GMap.net">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GMap.net for WPF 使用心得">
 <meta property="og:url" content="https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-使用心得/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
 <meta property="og:description" content="GMap.net for WPF      GMap.net for WPF 使用心得">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://thumbnail0.baidupcs.com/thumbnail/2cf77414c3501f3880426eaff405ce6c?fid=1130073879-250528-937210942035402&time=1503064800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-bBW846ERDKUQbnY1VTIaFzZFHzk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=5332924838473930470&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:image" content="http://thumbnail0.baidupcs.com/thumbnail/c6907142f196bfbc0fe290a3dc4136e0?fid=1130073879-250528-33867141375828&time=1503068400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-2t3zoJlKcPpKvGzwyo%2BAVDGUfuA%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=5333807984492037063&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
-<meta property="og:updated_time" content="2017-08-18T17:13:32.231Z">
+<meta property="og:image" content="https://cs-tao.github.io/ref-image/GMap-Wpf-Draw-Circle.png">
+<meta property="og:image" content="https://cs-tao.github.io/ref-image/FGIS-Damage-Circle.png">
+<meta property="og:updated_time" content="2017-08-19T05:32:22.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GMap.net for WPF 使用心得">
 <meta name="twitter:description" content="GMap.net for WPF      GMap.net for WPF 使用心得">
-<meta name="twitter:image" content="http://thumbnail0.baidupcs.com/thumbnail/2cf77414c3501f3880426eaff405ce6c?fid=1130073879-250528-937210942035402&time=1503064800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-bBW846ERDKUQbnY1VTIaFzZFHzk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=5332924838473930470&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video">
+<meta name="twitter:image" content="https://cs-tao.github.io/ref-image/GMap-Wpf-Draw-Circle.png">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
@@ -59,23 +59,69 @@
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
+        <script src="/static/api/js/search/jquery-1.9.1.min.js.js"></script>
         <a href="/" class="profilepic">
             
             <img lazy-src="/img/head.png" class="js-avatar">
             
         </a>
-
         <hgroup>
           <h1 class="header-author"><a href="/" title="Hi Mate">梦觉知晓</a></h1>
         </hgroup>
-
         
         <p class="header-subtitle">这是一个不能停留太久的世界</p>
         
         
             <form>
-                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
             </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-input');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
         
         
             <div id="switch-btn" class="switch-btn">
@@ -96,7 +142,6 @@
                         
                         
                     </div>
-                    
                 </div>
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
@@ -111,7 +156,6 @@
                 </div>
             </div>
         
-
         <div id="switch-area" class="switch-area">
             <div class="switch-wrap">
                 <section class="switch-part switch-part1">
@@ -125,8 +169,6 @@
                             <li><a href="/categories/web/">前端开发</a></li>
                         
                             <li><a href="/categories/language/">语言学习</a></li>
-                        
-                            <li><a href="/categories/algorithm/">算法学习</a></li>
                         
                             <li><a href="/categories/life/">生活记事</a></li>
                         
@@ -155,13 +197,11 @@
                     </nav>
                 </section>
                 
-                
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
                         <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Github-VS/" style="font-size: 10px;">Git Github VS</a> <a href="/tags/Github-Git/" style="font-size: 10px;">Github Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 15px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a>
                     </div>
                 </section>
-                
                 
                 
                 <section class="switch-part switch-part3">
@@ -172,7 +212,6 @@
                     </div>
                 </section>
                 
-
                 
             </div>
         </div>
@@ -208,8 +247,6 @@
                     <li><a href="/categories/web/">前端开发</a></li>
                 
                     <li><a href="/categories/language/">语言学习</a></li>
-                
-                    <li><a href="/categories/algorithm/">算法学习</a></li>
                 
                     <li><a href="/categories/life/">生活记事</a></li>
                 
@@ -302,7 +339,7 @@
 </li>
 <li><p>wpf版本只能绘制Point、PolyLine、Polygon三种图形，绘制圆则需要借助多边形的绘制。示例如下：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public void DrawCircle(PointLatLng center, double R)</div><div class="line">&#123;</div><div class="line">    double cartesianCenterX = double.MaxValue;</div><div class="line">    double cartesianCenterY = double.MaxValue;</div><div class="line">    double cartesianCenterZ = double.MaxValue;</div><div class="line"></div><div class="line">    mapControl.MapProvider.Projection.FromGeodeticToCartesian(center.Lat, center.Lng, 0, out cartesianCenterX, out cartesianCenterY, out cartesianCenterZ);//将圆心投影到笛卡尔坐标系</div><div class="line"></div><div class="line">    int pointCount = 200;//用于拟合圆的多边形顶点个数</div><div class="line"></div><div class="line">    List&lt;PointLatLng&gt; polygonPointList = new List&lt;PointLatLng&gt;(pointCount);//用于存放多边形顶点</div><div class="line"></div><div class="line">    double interval = 2 * Math.PI / pointCount;</div><div class="line">    for (double degree = 0; degree &lt; 2 * Math.PI; degree += interval)</div><div class="line">    &#123;</div><div class="line">        double tempX = cartesianCenterX + R * Math.Cos(degree);</div><div class="line">        double tempY = cartesianCenterY + R * Math.Sin(degree);</div><div class="line">        double tempLng = double.MaxValue;</div><div class="line">        double tempLat = double.MaxValue;</div><div class="line">        mapControl.MapProvider.Projection.FromCartesianTGeodetic(tempX, tempY, cartesianCenterZ, out tempLat, out tempLng);//投影到WGS84坐标系</div><div class="line">        polygonPointList.Add(new PointLatLng(tempLat, tempLng));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    GMapPolygon circle = new GMapPolygon(polygonPointList);</div><div class="line">    &#123;</div><div class="line">        circle.ZIndex = (int)LayerIndex.Polygon;</div><div class="line">    &#125;</div><div class="line">    mapControl.Markers.Add(circle);//添加到地图</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>  效果如下：<br>  <img src="http://thumbnail0.baidupcs.com/thumbnail/2cf77414c3501f3880426eaff405ce6c?fid=1130073879-250528-937210942035402&amp;time=1503064800&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-bBW846ERDKUQbnY1VTIaFzZFHzk%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5332924838473930470&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="查看图片"><br><br>  因为投影问题，说好的圆变为了椭圆，如果想生成正圆，可以在程序中使用一些WebAPI服务替换GMap的投影服务，我们项目使用的是搭建在自己服务器上的的GeoServer服务。效果如下：<br>  <img src="http://thumbnail0.baidupcs.com/thumbnail/c6907142f196bfbc0fe290a3dc4136e0?fid=1130073879-250528-33867141375828&amp;time=1503068400&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-2t3zoJlKcPpKvGzwyo%2BAVDGUfuA%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=5333807984492037063&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="查看图片"><br><br>  <code>备注：</code>两张图片截图自不同的程序。<br><br></p>
+<p>  效果如下：<br>  <img src="/ref-image/GMap-Wpf-Draw-Circle.png" alt="查看图片"><br><br>  因为投影问题，说好的圆变为了椭圆，如果想生成正圆，可以在程序中使用一些WebAPI服务替换GMap的投影服务，我们项目使用的是搭建在自己服务器上的的GeoServer服务。效果如下：<br>  <img src="/ref-image/FGIS-Damage-Circle.png" alt="查看图片"><br><br>  <code>备注：</code>两张图片截图自不同的程序。<br><br></p>
 <h3 id="GMap-net-for-WPF添加自定义图标并设定相对位置"><a href="#GMap-net-for-WPF添加自定义图标并设定相对位置" class="headerlink" title="GMap.net for WPF添加自定义图标并设定相对位置"></a>GMap.net for WPF添加自定义图标并设定相对位置</h3><p><em>持续更新中…</em></p>
 </li>
 </ul>
@@ -318,7 +355,7 @@
         <p><span>本文标题:</span><a href="/2017/08/18/GMap-net-for-WPF-使用心得/">GMap.net for WPF 使用心得</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
         <p><span>发布时间:</span>2017年08月18日 - 23时45分</p>
-        <p><span>最后更新:</span>2017年08月19日 - 01时13分</p>
+        <p><span>最后更新:</span>2017年08月19日 - 13时32分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/08/18/GMap-net-for-WPF-使用心得/" title="GMap.net for WPF 使用心得">https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-使用心得/</a>
             <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-使用心得/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -466,7 +503,7 @@
                 &copy; 2017 梦觉知晓
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> <a href="https://cs-tao.github.io/" target="_blank">CS-Tao</a>
             </div>
         </div>
         
@@ -494,7 +531,7 @@
 </footer>
 
     </div>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 <script src="/js/main.js"></script>
 
     <script>
@@ -575,23 +612,6 @@ ga('send', 'pageview');
     });
 </script>
 
-
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
-        }
-      }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
-      }
-    </script>
 
   </div>
 </body>

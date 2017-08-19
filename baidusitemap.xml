@@ -4,6 +4,56 @@
 
     
     
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
+    <lastmod>2017-08-19T05:32:22.546Z</lastmod>
+    <data>
+        <display>
+        <title>GMap.net for WPF 使用心得</title>
+        <pubTime>2017-08-18T15:45:14.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>Wpf</tag>
+         
+        <tag>Project</tag>
+         
+        <tag>GMap.net</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2017-08-19T03:53:56.581Z</lastmod>
+    <data>
+        <display>
+        <title>ISODATA算法学习心得及非监督分类软件得商业化界面实现</title>
+        <pubTime>2017-08-16T18:25:00.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>WinForm</tag>
+         
+        <tag>ISODATA</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://cs-tao.github.io/2017/08/18/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8hexo%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0/</loc>
@@ -19,32 +69,6 @@
            
              
               <breadCrumb title="web" url="https://cs-tao.github.io/categories/web/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/18/GMap-net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2017-08-18T17:13:32.231Z</lastmod>
-    <data>
-        <display>
-        <title>GMap.net for WPF 使用心得</title>
-        <pubTime>2017-08-18T15:45:14.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-        <tag>Project</tag>
-         
-        <tag>Wpf</tag>
-         
-        <tag>GMap.net</tag>
-         
-         
-           
-             
-              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
           
         </display>
     </data>
@@ -169,30 +193,6 @@
            
              
               <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2017-08-18T16:52:19.050Z</lastmod>
-    <data>
-        <display>
-        <title>ISODATA算法学习心得及非监督分类软件得商业化界面实现</title>
-        <pubTime>2017-08-16T18:25:00.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-        <tag>WinForm</tag>
-         
-        <tag>ISODATA</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="https://cs-tao.github.io/categories/algorithm/"/>
           
         </display>
     </data>
