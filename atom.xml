@@ -54,7 +54,7 @@
     <link href="https://cs-tao.github.io/2017/08/19/GMap.net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
     <id>https://cs-tao.github.io/2017/08/19/GMap.net-for-WPF-使用心得/</id>
     <published>2017-08-19T08:42:23.000Z</published>
-    <updated>2017-08-20T03:41:53.865Z</updated>
+    <updated>2017-08-20T03:50:05.605Z</updated>
     
     <content type="html"><![CDATA[<p><strong> GMap.net for WPF </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    利用GMap.net for WPF绘制点线面的方式以及未指定长宽的要素与其他要素间相对定位的方式<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -81,9 +81,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public void AddIconWithTooltip(PointLatLng pll, Uri iconUri, string tooltip)</div><div class="line">&#123;</div><div class="line">    Guid id = Guid.NewGuid();</div><div class="line">    </div><div class="line">    //添加tooltip显示窗口</div><div class="line">    GMapMarker tooltipViewer = new GMapMarker(pll);</div><div class="line">    &#123;</div><div class="line">        tooltipViewer.ZIndex = (int)LayerIndex.Point;</div><div class="line">        tooltipViewer.Tag = id;</div><div class="line">        TooltipForMap content = new TooltipForMap(tooltip, tooltipViewer);</div><div class="line">        tooltipViewer.Shape = content;</div><div class="line">        tooltipViewer.Shape.Visibility = Visibility.Hidden;</div><div class="line">    &#125;</div><div class="line">    mapControl.Markers.Add(tooltipViewer);</div><div class="line">    </div><div class="line">    UIElement shape = new MyIcon(new BitmapImage(iconUri), tooltipViewer);//构造函数：MyIcon(ImageSource image, GMapMarker iconTooltipViewer, double width = 22, double height = 22, bool showTipAlways = false)</div><div class="line">    </div><div class="line">    GMapMarker iconMarker = new GMapMarker(pll);</div><div class="line">    &#123;</div><div class="line">        iconMarker.ZIndex = (int)layerIndex;</div><div class="line">        iconMarker.Offset = new Point(-11, -11);</div><div class="line">        iconMarker.Tag = id;</div><div class="line">        iconMarker.Shape = shape;</div><div class="line">    &#125;</div><div class="line">    mapControl.Markers.Add(iconMarker);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>关键代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TooltipForMap content = new TooltipForMap(tooltip, tooltipViewer);</div></pre></td></tr></table></figure></p>
+<p><code>注意：</code>代码中id的作用是用于GMapMarker间的逻辑关联，方便同时从MapControl中移除。<br><br>关键代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TooltipForMap content = new TooltipForMap(tooltip, tooltipViewer);</div></pre></td></tr></table></figure></p>
 <p>其中TooltipForMap类的SizeChanged函数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">private void TooltipForMap_SizeChanged(object sender, SizeChangedEventArgs e)</div><div class="line">&#123;</div><div class="line">    _TooltipViewer.Offset = new Point(-ActualWidth / 2, -ActualHeight - 22);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>_TooltipViewer和传入构造函数的tooltipViewer为同一实例。<br><em>持续更新中…</em></p>
+<p><code>注意：</code>_TooltipViewer和传入构造函数的tooltipViewer为同一实例。<br><em>持续更新中…</em></p>
 </the>]]></content>
     
     <summary type="html">
@@ -97,9 +97,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
-    
       <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
