@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/GMap.net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2017-08-20T18:49:08.942Z</lastmod>
+    <lastmod>2017-08-20T18:51:00.230Z</lastmod>
     <data>
         <display>
         <title>GMap.net for WPF 使用心得</title>
@@ -13,9 +13,9 @@
         
         <tag>C#</tag>
          
-        <tag>Project</tag>
-         
         <tag>Wpf</tag>
+         
+        <tag>Project</tag>
          
         <tag>GMap.net</tag>
          
@@ -136,6 +136,7 @@
     </url>
 
     
+    
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2017-08-19T08:57:45.373Z</lastmod>
@@ -160,27 +161,6 @@
     </url>
 
     
-    
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    <data>
-        <display>
-        <title>C#中await和async</title>
-        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-         
-           
-             
-              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/Android%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
@@ -244,6 +224,26 @@
            
              
               <breadCrumb title="web" url="https://cs-tao.github.io/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    <data>
+        <display>
+        <title>C#中await和async</title>
+        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+         
+           
+             
+              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
           
         </display>
     </data>
