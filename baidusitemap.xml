@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/GMap.net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2017-08-20T03:50:05.605Z</lastmod>
+    <lastmod>2017-08-20T08:02:48.235Z</lastmod>
     <data>
         <display>
         <title>GMap.net for WPF 使用心得</title>
@@ -186,19 +186,19 @@
 
     
   <url>
-    <loc>https://cs-tao.github.io/2017/08/19/GIS-for-Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E4%B9%8B%E9%81%93-%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
+    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
     <lastmod>2017-08-19T08:57:45.358Z</lastmod>
     <data>
         <display>
-        <title>GIS-for-Web应用开发之道-学习心得</title>
-        <pubTime>2017-08-18T16:41:35.000Z</pubTime>
+        <title>C#中await和async</title>
+        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
         
-        <tag>GIS</tag>
+        <tag>C#</tag>
          
          
            
              
-              <breadCrumb title="web" url="https://cs-tao.github.io/categories/web/"/>
+              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
           
         </display>
     </data>
@@ -231,19 +231,19 @@
     
     
   <url>
-    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
+    <loc>https://cs-tao.github.io/2017/08/19/GIS-for-Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E4%B9%8B%E9%81%93-%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2017-08-19T08:57:45.358Z</lastmod>
     <data>
         <display>
-        <title>C#中await和async</title>
-        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
+        <title>GIS-for-Web应用开发之道-学习心得</title>
+        <pubTime>2017-08-18T16:41:35.000Z</pubTime>
         
-        <tag>C#</tag>
+        <tag>GIS</tag>
          
          
            
              
-              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
+              <breadCrumb title="web" url="https://cs-tao.github.io/categories/web/"/>
           
         </display>
     </data>
