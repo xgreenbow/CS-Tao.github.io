@@ -2,21 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://cs-tao.github.io/2017/08/19/git%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
+    <loc>https://cs-tao.github.io/2017/08/19/GMap.net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
     
-    <lastmod>2017-08-19T08:57:45.373Z</lastmod>
+    <lastmod>2017-08-20T03:41:53.865Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/</loc>
+    <loc>https://cs-tao.github.io/2017/08/19/Github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     
-    <lastmod>2017-08-19T08:57:45.373Z</lastmod>
+    <lastmod>2017-08-20T02:42:58.886Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/19/git%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
+    
+    <lastmod>2017-08-20T02:42:49.720Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/%E5%9C%A8VS%E4%B8%AD%E4%BD%BF%E7%94%A8Github/</loc>
+    
+    <lastmod>2017-08-20T02:42:43.983Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/</loc>
     
     <lastmod>2017-08-19T08:57:45.373Z</lastmod>
     
@@ -51,35 +65,7 @@
   </url>
   
   <url>
-    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
-    
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://cs-tao.github.io/2017/08/19/GIS-for-Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E4%B9%8B%E9%81%93-%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
-    
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/19/GMap.net-for-WPF-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
-    
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/19/Github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2017-08-19T08:57:45.358Z</lastmod>
     
@@ -93,7 +79,21 @@
   </url>
   
   <url>
+    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
+    
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://cs-tao.github.io//404.html</loc>
+    
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2017-08-19T08:57:45.358Z</lastmod>
     
