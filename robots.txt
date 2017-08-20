@@ -7,5 +7,6 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /fancybox/
 
-Sitemap: http://geeksblog.cc/sitemap.xml
-Sitemap: http://geeksblog.cc/baidusitemap.xml
+Sitemap: http://cs-tao.github.io/sitemap.xml
+Sitemap: http://cs-tao.github.io/baidusitemap.xml
+Sitemap: http://cs-tao.github.io/atom.xml
