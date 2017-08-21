@@ -32,9 +32,9 @@
         <title>GMap.net for WPF 使用心得</title>
         <pubTime>2017-08-19T08:42:23.000Z</pubTime>
         
-        <tag>Project</tag>
-         
         <tag>C#</tag>
+         
+        <tag>Project</tag>
          
         <tag>Wpf</tag>
          
@@ -96,9 +96,9 @@
         <title>Github使用指南</title>
         <pubTime>2017-08-18T16:39:07.000Z</pubTime>
         
-        <tag>Git</tag>
-         
         <tag>Github</tag>
+         
+        <tag>Git</tag>
          
          
            
@@ -118,9 +118,9 @@
         <title>git学习心得</title>
         <pubTime>2017-08-18T16:39:49.000Z</pubTime>
         
-        <tag>Git</tag>
-         
         <tag>Github</tag>
+         
+        <tag>Git</tag>
          
          
            
@@ -140,9 +140,9 @@
         <title>在VS中使用Github</title>
         <pubTime>2017-08-18T16:39:34.000Z</pubTime>
         
-        <tag>Git</tag>
-         
         <tag>Github</tag>
+         
+        <tag>Git</tag>
          
         <tag>VS</tag>
          
@@ -155,6 +155,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/</loc>
@@ -179,7 +180,6 @@
     </data>
     </url>
 
-    
     
     
   <url>
@@ -207,26 +207,6 @@
 
     
   <url>
-    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    <data>
-        <display>
-        <title>C#中await和async</title>
-        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-         
-           
-             
-              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://cs-tao.github.io/2017/08/19/Android%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2017-08-19T08:57:45.358Z</lastmod>
     <data>
@@ -239,6 +219,26 @@
         <tag>Java</tag>
          
         <tag>AndroidStudio</tag>
+         
+         
+           
+             
+              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    <data>
+        <display>
+        <title>C#中await和async</title>
+        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
+        
+        <tag>C#</tag>
          
          
            
