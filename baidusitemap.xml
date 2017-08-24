@@ -207,26 +207,6 @@
 
     
   <url>
-    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    <data>
-        <display>
-        <title>C#中await和async</title>
-        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-         
-           
-             
-              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://cs-tao.github.io/2017/08/19/Android%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2017-08-19T08:57:45.358Z</lastmod>
     <data>
@@ -239,6 +219,26 @@
         <tag>Java</tag>
          
         <tag>AndroidStudio</tag>
+         
+         
+           
+             
+              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    <data>
+        <display>
+        <title>C#中await和async</title>
+        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
+        
+        <tag>C#</tag>
          
          
            
