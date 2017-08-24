@@ -157,6 +157,7 @@
 
     
     
+    
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2017-08-19T08:57:45.373Z</lastmod>
@@ -170,31 +171,6 @@
         <tag>Wpf</tag>
          
         <tag>Xaml</tag>
-         
-         
-           
-             
-              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/19/Android%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    <data>
-        <display>
-        <title>Android学习心得</title>
-        <pubTime>2017-08-18T16:42:08.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>AndroidStudio</tag>
          
          
            
@@ -224,6 +200,30 @@
            
              
               <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/19/Android%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    <data>
+        <display>
+        <title>Android学习心得</title>
+        <pubTime>2017-08-18T16:42:08.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>AndroidStudio</tag>
+         
+         
+           
+             
+              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
           
         </display>
     </data>
