@@ -183,30 +183,6 @@
     
     
   <url>
-    <loc>https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    <data>
-        <display>
-        <title>ISODATA算法学习心得及非监督分类软件得商业化界面实现</title>
-        <pubTime>2017-08-16T18:25:00.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-        <tag>WinForm</tag>
-         
-        <tag>ISODATA</tag>
-         
-         
-           
-             
-              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://cs-tao.github.io/2017/08/19/Android%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2017-08-19T08:57:45.358Z</lastmod>
     <data>
@@ -224,6 +200,30 @@
            
              
               <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/17/ISODATA%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97%E5%8F%8A%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%88%86%E7%B1%BB%E8%BD%AF%E4%BB%B6%E5%BE%97%E5%95%86%E4%B8%9A%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    <data>
+        <display>
+        <title>ISODATA算法学习心得及非监督分类软件得商业化界面实现</title>
+        <pubTime>2017-08-16T18:25:00.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>WinForm</tag>
+         
+        <tag>ISODATA</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
           
         </display>
     </data>
