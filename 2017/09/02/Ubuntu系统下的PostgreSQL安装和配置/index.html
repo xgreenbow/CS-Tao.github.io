@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Hexo | 梦觉知晓的博客</title>
+  <title>Ubuntu系统下的PostgreSQL安装和配置 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="梦觉知晓的博客主页">
-<meta property="og:type" content="website">
-<meta property="og:title" content="梦觉知晓的博客">
-<meta property="og:url" content="https://cs-tao.github.io/tags/Hexo/index.html">
+  <meta name="description" content="Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤      PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行">
+<meta name="keywords" content="PostgreSQL Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu系统下的PostgreSQL安装和配置">
+<meta property="og:url" content="https://cs-tao.github.io/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
-<meta property="og:description" content="梦觉知晓的博客主页">
+<meta property="og:description" content="Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤      PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-02T18:16:24.609Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梦觉知晓的博客">
-<meta name="twitter:description" content="梦觉知晓的博客主页">
+<meta name="twitter:title" content="Ubuntu系统下的PostgreSQL安装和配置">
+<meta name="twitter:description" content="Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤      PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
@@ -40,9 +42,9 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
-          isTag: true,
+          isTag: false,
           isCategory: false,
           open_in_new: false
       }
@@ -276,58 +278,255 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Ubuntu系统下的PostgreSQL安装和配置" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/24/如何利用hexo发表文章/" class="archive-article-date">
-      <time datetime="2017-08-24T06:28:21.213Z" itemprop="datePublished">08-24</time>
+    <div class="article-meta">
+      <a href="/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/" class="article-date">
+      <time datetime="2017-09-02T15:20:58.000Z" itemprop="datePublished">2017-09-02</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/24/如何利用hexo发表文章/">如何利用hexo发表文章</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu系统下的PostgreSQL安装和配置
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
+    <a class="article-category-link" href="/categories/software/">software</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL-Ubuntu/">PostgreSQL Ubuntu</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="PostgreSQL介绍"><a href="#PostgreSQL介绍" class="headerlink" title="PostgreSQL介绍"></a>PostgreSQL介绍</h2><p><a href="https://www.postgresql.org/" target="_blank" rel="external">PostgreSQL</a>是以加州大学伯克利分校计算机系开发的 POSTGRES，现在已经更名为PostgreSQL，版本 4.2为基础的对象关系型数据库管理系统（ORDBMS），开发语言为C/C++。PostgreSQL支持大部分 SQL标准并且提供了许多其他现代特性：复杂查询、外键、触发器、视图、事务完整性、MVCC。同样，PostgreSQL 可以用许多方法扩展，比如， 通过增加新的数据类型、函数、操作符、聚集函数、索引。免费使用、修改、和分发 PostgreSQL，不管是私用、商用、还是学术研究使用。</p>
+<h2 id="PostgresSQL安装"><a href="#PostgresSQL安装" class="headerlink" title="PostgresSQL安装"></a>PostgresSQL安装</h2><ul>
+<li><p>添加apt-repository</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository <span class="string">"deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>载入apt-repository的签名</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新package列表</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过apt-get工具安装PostgreSQL</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install postgresql-9.6</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="配置PostgreSQL"><a href="#配置PostgreSQL" class="headerlink" title="配置PostgreSQL"></a>配置PostgreSQL</h2><ul>
+<li><p>切换到postgres用户</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo su postgres</div></pre></td></tr></table></figure>
+</li>
+<li><p>登录到postgresql</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">psql postgres</div></pre></td></tr></table></figure>
+<p>  此时如果看到如下页面则说明之前的努力没有白费，已经安装成功了。</p>
+</li>
+<li><p>更改用户密码<br>  在当前界面下输入</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\password</div></pre></td></tr></table></figure>
+<p>  输入你想设置的PostgreSQL密码。输入\q回车退出。</p>
+</li>
+<li><p>设置连接权限</p>
+<ul>
+<li><p>打开配置文件</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/postgresql/9.1/main/postgresql.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改连接权限为所有主机</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#listen_addresses = ‘localhost’改为 listen_addresses = ‘*’</span></div></pre></td></tr></table></figure>
+<p>  <code>注意：</code>需要去掉#号</p>
+</li>
+<li><p>启用密码验证</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#password_encryption = on 改为 password_encryption = on</span></div></pre></td></tr></table></figure>
+<p>  <code>注意：</code>需要去掉#号</p>
+</li>
+</ul>
+</li>
+<li><p>设置用户ip段</p>
+<ul>
+<li><p>打开配置文件</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/postgresql/9.1/main/pg_hba.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>在文件末尾添加如下内容</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">host all all 0.0.0.0/0 md5</div></pre></td></tr></table></figure>
+<p>  <code>注意：</code>0.0.0.0为地址段。0为掩码的二进制位，可取数值为0、8、16、24、32。md5为加密方式<br>  <code>示例：</code>192.168.0.0/16代表192.168.0.1 ~ 192.168.255.254</p>
+</li>
+</ul>
+</li>
+<li>重启PostgreSQL服务  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service postgres restart</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h2><ul>
+<li><p>本地登录</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">psql -U postgres -h 127.0.0.1</div></pre></td></tr></table></figure>
+</li>
+<li><p>远程登录</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">psql -U postgres -h 远程IP地址</div></pre></td></tr></table></figure></li>
+</ul>
+</the>
+      
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/">Ubuntu系统下的PostgreSQL安装和配置</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
+        <p><span>发布时间:</span>2017年09月02日 - 23时20分</p>
+        <p><span>最后更新:</span>2017年09月03日 - 02时16分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/" title="Ubuntu系统下的PostgreSQL安装和配置">https://cs-tao.github.io/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/24/如何利用hexo发表文章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何利用hexo发表文章</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PostgreSQL介绍"><span class="toc-number">1.</span> <span class="toc-text">PostgreSQL介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PostgresSQL安装"><span class="toc-number">2.</span> <span class="toc-text">PostgresSQL安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置PostgreSQL"><span class="toc-number">3.</span> <span class="toc-text">配置PostgreSQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登录数据库"><span class="toc-number">4.</span> <span class="toc-text">登录数据库</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
 
     
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.min.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'CS-Tao',
+      repo: 'CS-Tao.github.io',
+      oauth: {
+        client_id: '6a448300be1a650075b2',
+        client_secret: 'f411a9ef700c4580c3e282cf46a541e4592b7081',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
 
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/08/24/如何利用hexo发表文章/" title="下一篇: 如何利用hexo发表文章">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/">Ubuntu系统下的PostgreSQL安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/24/如何利用hexo发表文章/">如何利用hexo发表文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/GMap.net-for-WPF-使用心得/">GMap.net for WPF 使用心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Android学习心得/">Android学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/">GIS-for-Web应用开发之道-学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/git学习心得/">git学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/在VS中使用Github/">在VS中使用Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Github使用指南/">Github使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/C-中await和async/">C#中await和async</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Wpf使用MahApp-Metro主题/">Wpf使用MahApp.Metro主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/暑假旅游笔记/">2017年暑假旅游笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/">ISODATA算法学习心得及非监督分类软件得商业化界面实现</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -436,17 +635,6 @@ MathJax.Hub.Queue(function() {
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

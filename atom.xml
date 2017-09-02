@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-08-24T07:52:32.537Z</updated>
+  <updated>2017-09-02T18:16:24.609Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -14,6 +14,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu系统下的PostgreSQL安装和配置</title>
+    <link href="https://cs-tao.github.io/2017/09/02/Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84PostgreSQL%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
+    <id>https://cs-tao.github.io/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/</id>
+    <published>2017-09-02T15:20:58.000Z</published>
+    <updated>2017-09-02T18:16:24.609Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="PostgreSQL介绍"><a href="#PostgreSQL介绍" class="headerlink" title="PostgreSQL介绍"></a>PostgreSQL介绍</h2><p><a href="https://www.postgresql.org/" target="_blank" rel="external">PostgreSQL</a>是以加州大学伯克利分校计算机系开发的 POSTGRES，现在已经更名为PostgreSQL，版本 4.2为基础的对象关系型数据库管理系统（ORDBMS），开发语言为C/C++。PostgreSQL支持大部分 SQL标准并且提供了许多其他现代特性：复杂查询、外键、触发器、视图、事务完整性、MVCC。同样，PostgreSQL 可以用许多方法扩展，比如， 通过增加新的数据类型、函数、操作符、聚集函数、索引。免费使用、修改、和分发 PostgreSQL，不管是私用、商用、还是学术研究使用。</p>
+<h2 id="PostgresSQL安装"><a href="#PostgresSQL安装" class="headerlink" title="PostgresSQL安装"></a>PostgresSQL安装</h2><ul>
+<li><p>添加apt-repository</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository <span class="string">"deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>载入apt-repository的签名</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新package列表</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过apt-get工具安装PostgreSQL</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install postgresql-9.6</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="配置PostgreSQL"><a href="#配置PostgreSQL" class="headerlink" title="配置PostgreSQL"></a>配置PostgreSQL</h2><ul>
+<li><p>切换到postgres用户</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo su postgres</div></pre></td></tr></table></figure>
+</li>
+<li><p>登录到postgresql</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">psql postgres</div></pre></td></tr></table></figure>
+<p>  此时如果看到如下页面则说明之前的努力没有白费，已经安装成功了。</p>
+</li>
+<li><p>更改用户密码<br>  在当前界面下输入</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\password</div></pre></td></tr></table></figure>
+<p>  输入你想设置的PostgreSQL密码。输入\q回车退出。</p>
+</li>
+<li><p>设置连接权限</p>
+<ul>
+<li><p>打开配置文件</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/postgresql/9.1/main/postgresql.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改连接权限为所有主机</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#listen_addresses = ‘localhost’改为 listen_addresses = ‘*’</span></div></pre></td></tr></table></figure>
+<p>  <code>注意：</code>需要去掉#号</p>
+</li>
+<li><p>启用密码验证</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#password_encryption = on 改为 password_encryption = on</span></div></pre></td></tr></table></figure>
+<p>  <code>注意：</code>需要去掉#号</p>
+</li>
+</ul>
+</li>
+<li><p>设置用户ip段</p>
+<ul>
+<li><p>打开配置文件</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/postgresql/9.1/main/pg_hba.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>在文件末尾添加如下内容</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">host all all 0.0.0.0/0 md5</div></pre></td></tr></table></figure>
+<p>  <code>注意：</code>0.0.0.0为地址段。0为掩码的二进制位，可取数值为0、8、16、24、32。md5为加密方式<br>  <code>示例：</code>192.168.0.0/16代表192.168.0.1 ~ 192.168.255.254</p>
+</li>
+</ul>
+</li>
+<li>重启PostgreSQL服务  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service postgres restart</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h2><ul>
+<li><p>本地登录</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">psql -U postgres -h 127.0.0.1</div></pre></td></tr></table></figure>
+</li>
+<li><p>远程登录</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">psql -U postgres -h 远程IP地址</div></pre></td></tr></table></figure></li>
+</ul>
+</the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行&lt;br&gt;
+    
+    </summary>
+    
+      <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
+    
+    
+      <category term="PostgreSQL Ubuntu" scheme="https://cs-tao.github.io/tags/PostgreSQL-Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>如何利用hexo发表文章</title>
@@ -96,9 +184,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
-    
       <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     

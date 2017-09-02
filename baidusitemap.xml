@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://cs-tao.github.io/2017/09/02/Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84PostgreSQL%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-09-02T18:16:24.609Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu系统下的PostgreSQL安装和配置</title>
+        <pubTime>2017-09-02T15:20:58.000Z</pubTime>
+        
+        <tag>PostgreSQL Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://cs-tao.github.io/2017/08/19/git%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2017-08-24T18:32:33.446Z</lastmod>
     <data>
@@ -122,9 +142,9 @@
         
         <tag>C#</tag>
          
-        <tag>Wpf</tag>
-         
         <tag>Project</tag>
+         
+        <tag>Wpf</tag>
          
         <tag>GMap.net</tag>
          
