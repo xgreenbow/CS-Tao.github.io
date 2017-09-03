@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://cs-tao.github.io/2017/09/02/Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84PostgreSQL%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-09-02T18:34:58.559Z</lastmod>
+    <lastmod>2017-09-03T04:03:33.613Z</lastmod>
     <data>
         <display>
         <title>Ubuntu系统下的PostgreSQL安装和配置</title>
@@ -202,6 +202,8 @@
     </url>
 
     
+    
+    
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2017-08-19T08:57:45.373Z</lastmod>
@@ -215,28 +217,6 @@
         <tag>Wpf</tag>
          
         <tag>Xaml</tag>
-         
-         
-           
-             
-              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
-    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
-    <data>
-        <display>
-        <title>C#中await和async</title>
-        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
-        
-        <tag>C#</tag>
          
          
            
@@ -266,6 +246,26 @@
            
              
               <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
+    <lastmod>2017-08-19T08:57:45.358Z</lastmod>
+    <data>
+        <display>
+        <title>C#中await和async</title>
+        <pubTime>2017-08-18T16:38:21.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+         
+           
+             
+              <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
           
         </display>
     </data>
