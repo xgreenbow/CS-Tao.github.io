@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-09-03T04:03:33.613Z</updated>
+  <updated>2017-09-03T09:34:48.341Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>夜跑助手App-路径规划的实现</title>
+    <link href="https://cs-tao.github.io/2017/09/03/%E5%A4%9C%E8%B7%91%E5%8A%A9%E6%89%8BApp-%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://cs-tao.github.io/2017/09/03/夜跑助手App-路径规划的实现/</id>
+    <published>2017-09-03T08:34:55.000Z</published>
+    <updated>2017-09-03T09:34:48.341Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> <a href="https://github.com/CS-Tao/Route-NightRun" target="_blank" rel="external">夜跑助手App</a>路径规划的实现 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    夜跑助手App是我们小组参加四维图新地图制图大赛的成果之一，现在对其中的夜跑路径规划的方式进行记录<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="按站点进行路径规划"><a href="#按站点进行路径规划" class="headerlink" title="按站点进行路径规划"></a>按站点进行路径规划</h2><h3 id="原理和方法"><a href="#原理和方法" class="headerlink" title="原理和方法"></a>原理和方法</h3><p>按站点进行路径规划的方式主要是利用<a href="https://www.graphhopper.com/" target="_blank" rel="external">GraphHopper</a>提供的WebAPI进行路径规划，通过对Rest接口发送Get请求获取json数据，如下<a href="https://graphhopper.com/api/1/route?point=49.932707,11.588051&amp;point=50.3404,11.64705&amp;vehicle=car&amp;debug=false&amp;key=f8821850-c1f8-4f8f-befb-f976c887ebfb&amp;optimize=true" target="_blank" rel="external">https://graphhopper.com/api/1/route?point=49.932707,11.588051&amp;point=50.3404,11.64705&amp;vehicle=car&amp;debug=false&amp;key=f8821850-c1f8-4f8f-befb-f976c887ebfb&amp;optimize=true</a>。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><ul>
+<li>通过用户在手机屏幕上的双击操作获得用户希望经过的站点并进行标记</li>
+<li>将用户指定的站点投影为地理坐标</li>
+<li>生成http请求</li>
+<li>得到返回的json数据</li>
+<li>解析数据，此时便可得到路径信息</li>
+<li>将路径显示到屏幕上</li>
+<li>同时计算路径附近两百米形成的地理坐标框，发送http请求到我们自己的服务器</li>
+<li>得到饮品店信息并进行显示</li>
+</ul>
+<p>流程图如下：<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/%E6%8C%89%E7%AB%99%E7%82%B9%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92.png" alt="查看图片"><br><br>效果图如下：<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/%E6%8C%89%E7%AB%99%E7%82%B9%E8%A7%84%E5%88%92%E8%B7%AF%E5%BE%841.jpg" alt="查看图片"><br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/%E6%8C%89%E7%AB%99%E7%82%B9%E8%A7%84%E5%88%92%E8%B7%AF%E5%BE%842.jpg" alt="查看图片"><br></p>
+<h2 id="按路径长度进行路径规划"><a href="#按路径长度进行路径规划" class="headerlink" title="按路径长度进行路径规划"></a>按路径长度进行路径规划</h2><p>待续…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; &lt;a href=&quot;https://github.com/CS-Tao/Route-NightRun&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;夜跑助手App&lt;/a&gt;路径规划的实现 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    夜跑助手App是我们小组参加四维图新地图制图大赛的成果之一，现在对其中的夜跑路径规划的方式进行记录&lt;br&gt;
+    
+    </summary>
+    
+      <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
+    
+    
+      <category term="Android" scheme="https://cs-tao.github.io/tags/Android/"/>
+    
+      <category term="Java" scheme="https://cs-tao.github.io/tags/Java/"/>
+    
+      <category term="WebAPI" scheme="https://cs-tao.github.io/tags/WebAPI/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu系统下的PostgreSQL安装和配置</title>
