@@ -5,18 +5,18 @@
   
   <title>Js利用百度地图API进行坐标转换 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="百度地图API for JavaScript的使用  在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转">
+  <meta name="description" content="百度地图API for JavaScript的使用 在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转">
 <meta name="keywords" content="Js,JacaScript,百度API">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Js利用百度地图API进行坐标转换">
 <meta property="og:url" content="https://cs-tao.github.io/2017/09/04/Js利用百度API进行坐标转换/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
-<meta property="og:description" content="百度地图API for JavaScript的使用  在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转">
+<meta property="og:description" content="百度地图API for JavaScript的使用 在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-04T17:38:03.728Z">
+<meta property="og:updated_time" content="2017-09-04T17:39:45.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js利用百度地图API进行坐标转换">
-<meta name="twitter:description" content="百度地图API for JavaScript的使用  在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转">
+<meta name="twitter:description" content="百度地图API for JavaScript的使用 在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
@@ -320,8 +320,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> 百度地图API for JavaScript的使用 </strong></p>
-<p><excerpt in="" index="" |="" 首页摘要=""><br>在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转<br><a id="more"></a></excerpt></p>
+        <p><strong> 百度地图API for JavaScript的使用 </strong><excerpt in="" index="" |="" 首页摘要=""><br>在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
 <h2 id="导入js文件"><a href="#导入js文件" class="headerlink" title="导入js文件"></a>导入js文件</h2><p>在html文件中添加<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://api.map.baidu.com/api?v=1.2"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="地理坐标转为平面坐标"><a href="#地理坐标转为平面坐标" class="headerlink" title="地理坐标转为平面坐标"></a>地理坐标转为平面坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> mercatorPoint = projection.lngLatToPoint(<span class="keyword">new</span> BMap.Point(<span class="number">114.3908</span>, <span class="number">30.4879</span>));</div><div class="line">alert(<span class="string">"x = "</span> + mercatorPoint.x + <span class="string">", y = "</span> + mercatorPoint.y);</div></pre></td></tr></table></figure>
@@ -337,7 +336,7 @@
         <p><span>本文标题:</span><a href="/2017/09/04/Js利用百度API进行坐标转换/">Js利用百度地图API进行坐标转换</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
         <p><span>发布时间:</span>2017年09月04日 - 21时10分</p>
-        <p><span>最后更新:</span>2017年09月05日 - 01时38分</p>
+        <p><span>最后更新:</span>2017年09月05日 - 01时39分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/09/04/Js利用百度API进行坐标转换/" title="Js利用百度地图API进行坐标转换">https://cs-tao.github.io/2017/09/04/Js利用百度API进行坐标转换/</a>
             <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/09/04/Js利用百度API进行坐标转换/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
