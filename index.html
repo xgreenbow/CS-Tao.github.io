@@ -201,7 +201,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android/" style="font-size: 13.33px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 16.67px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VS/" style="font-size: 10px;">VS</a> <a href="/tags/WebAPI/" style="font-size: 10px;">WebAPI</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 13.33px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a>
+                        <a href="/tags/Android/" style="font-size: 13.33px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 16.67px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/JacaScript/" style="font-size: 10px;">JacaScript</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/Js/" style="font-size: 10px;">Js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Project/" style="font-size: 10px;">Project</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VS/" style="font-size: 10px;">VS</a> <a href="/tags/WebAPI/" style="font-size: 10px;">WebAPI</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 13.33px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a> <a href="/tags/百度API/" style="font-size: 10px;">百度API</a>
                     </div>
                 </section>
                 
@@ -284,6 +284,73 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Js利用百度API进行坐标转换" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/04/Js利用百度API进行坐标转换/" class="article-date">
+      <time datetime="2017-09-04T13:10:59.000Z" itemprop="datePublished">2017-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/04/Js利用百度API进行坐标转换/">Js利用百度地图API进行坐标转换</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转 </strong></p>
+<p><excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="导入js文件"><a href="#导入js文件" class="headerlink" title="导入js文件"></a>导入js文件</h2><p>在html文件中添加<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://api.map.baidu.com/api?v=1.2"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="地理坐标转为平面坐标"><a href="#地理坐标转为平面坐标" class="headerlink" title="地理坐标转为平面坐标"></a>地理坐标转为平面坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> mercatorPoint = projection.lngLatToPoint(<span class="keyword">new</span> BMap.Point(<span class="number">114.3908</span>, <span class="number">30.4879</span>));</div><div class="line">alert(<span class="string">"x = "</span> + mercatorPoint.x + <span class="string">", y = "</span> + mercatorPoint.y);</div></pre></td></tr></table></figure>
+<h2 id="平面坐标转为地理坐标"><a href="#平面坐标转为地理坐标" class="headerlink" title="平面坐标转为地理坐标"></a>平面坐标转为地理坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> lngLat = projection.pointToLngLat(<span class="keyword">new</span> BMap.Pixel(<span class="number">12734064.16</span>, <span class="number">3544542.8</span>));</div><div class="line">alert(<span class="string">"lng = "</span> + lngLat.lng + <span class="string">", lat = "</span> + lngLat.lat);</div></pre></td></tr></table></figure>
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/language/">language</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JacaScript/">JacaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度API/">百度API</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-夜跑助手App-路径规划的实现" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -379,7 +446,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><strong> Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行<br>
+              <p><strong> Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤 </strong> </p>
+<p><excerpt in="" index="" |="" 首页摘要=""><br>PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行<br>
           
       
       
@@ -870,73 +938,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/08/19/Github使用指南/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-C-中await和async" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/19/C-中await和async/" class="article-date">
-      <time datetime="2017-08-18T16:38:21.000Z" itemprop="datePublished">2017-08-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/19/C-中await和async/">C#中await和async</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> C#中await和async使用介绍 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/language/">language</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/08/19/C-中await和async/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>

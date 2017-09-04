@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: GIS | 梦觉知晓的博客</title>
+  <title>Js利用百度地图API进行坐标转换 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="梦觉知晓的博客主页">
-<meta property="og:type" content="website">
-<meta property="og:title" content="梦觉知晓的博客">
-<meta property="og:url" content="https://cs-tao.github.io/tags/GIS/index.html">
+  <meta name="description" content="在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转    导入js文件在html文件中添加1&amp;lt;script src=&quot;http://api.map.baidu.com/api?v=1.2&quot;&amp;gt;&amp;lt;/script&amp;gt; 地理坐标转为平面坐标123var projection = new BMap.MercatorProjection();var mercatorP">
+<meta name="keywords" content="Js,JacaScript,百度API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js利用百度地图API进行坐标转换">
+<meta property="og:url" content="https://cs-tao.github.io/2017/09/04/Js利用百度API进行坐标转换/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
-<meta property="og:description" content="梦觉知晓的博客主页">
+<meta property="og:description" content="在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转    导入js文件在html文件中添加1&amp;lt;script src=&quot;http://api.map.baidu.com/api?v=1.2&quot;&amp;gt;&amp;lt;/script&amp;gt; 地理坐标转为平面坐标123var projection = new BMap.MercatorProjection();var mercatorP">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-04T17:30:28.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梦觉知晓的博客">
-<meta name="twitter:description" content="梦觉知晓的博客主页">
+<meta name="twitter:title" content="Js利用百度地图API进行坐标转换">
+<meta name="twitter:description" content="在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转    导入js文件在html文件中添加1&amp;lt;script src=&quot;http://api.map.baidu.com/api?v=1.2&quot;&amp;gt;&amp;lt;/script&amp;gt; 地理坐标转为平面坐标123var projection = new BMap.MercatorProjection();var mercatorP">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
@@ -40,9 +42,9 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
-          isTag: true,
+          isTag: false,
           isCategory: false,
           open_in_new: false
       }
@@ -276,58 +278,194 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Js利用百度API进行坐标转换" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/" class="archive-article-date">
-      <time datetime="2017-08-18T16:41:35.000Z" itemprop="datePublished">08-19</time>
+    <div class="article-meta">
+      <a href="/2017/09/04/Js利用百度API进行坐标转换/" class="article-date">
+      <time datetime="2017-09-04T13:10:59.000Z" itemprop="datePublished">2017-09-04</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/">GIS-for-Web应用开发之道-学习心得</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Js利用百度地图API进行坐标转换
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
+    <a class="article-category-link" href="/categories/language/">language</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/">GIS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JacaScript/">JacaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度API/">百度API</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转 </strong></p>
+<p><excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="导入js文件"><a href="#导入js文件" class="headerlink" title="导入js文件"></a>导入js文件</h2><p>在html文件中添加<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://api.map.baidu.com/api?v=1.2"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="地理坐标转为平面坐标"><a href="#地理坐标转为平面坐标" class="headerlink" title="地理坐标转为平面坐标"></a>地理坐标转为平面坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> mercatorPoint = projection.lngLatToPoint(<span class="keyword">new</span> BMap.Point(<span class="number">114.3908</span>, <span class="number">30.4879</span>));</div><div class="line">alert(<span class="string">"x = "</span> + mercatorPoint.x + <span class="string">", y = "</span> + mercatorPoint.y);</div></pre></td></tr></table></figure>
+<h2 id="平面坐标转为地理坐标"><a href="#平面坐标转为地理坐标" class="headerlink" title="平面坐标转为地理坐标"></a>平面坐标转为地理坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> lngLat = projection.pointToLngLat(<span class="keyword">new</span> BMap.Pixel(<span class="number">12734064.16</span>, <span class="number">3544542.8</span>));</div><div class="line">alert(<span class="string">"lng = "</span> + lngLat.lng + <span class="string">", lat = "</span> + lngLat.lat);</div></pre></td></tr></table></figure>
+      
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/09/04/Js利用百度API进行坐标转换/">Js利用百度地图API进行坐标转换</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
+        <p><span>发布时间:</span>2017年09月04日 - 21时10分</p>
+        <p><span>最后更新:</span>2017年09月05日 - 01时30分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/04/Js利用百度API进行坐标转换/" title="Js利用百度地图API进行坐标转换">https://cs-tao.github.io/2017/09/04/Js利用百度API进行坐标转换/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/09/04/Js利用百度API进行坐标转换/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/03/夜跑助手App-路径规划的实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">夜跑助手App-路径规划的实现</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#导入js文件"><span class="toc-number">1.</span> <span class="toc-text">导入js文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#地理坐标转为平面坐标"><span class="toc-number">2.</span> <span class="toc-text">地理坐标转为平面坐标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面坐标转为地理坐标"><span class="toc-number">3.</span> <span class="toc-text">平面坐标转为地理坐标</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
 
     
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.min.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'CS-Tao',
+      repo: 'CS-Tao.github.io',
+      oauth: {
+        client_id: '6a448300be1a650075b2',
+        client_secret: 'f411a9ef700c4580c3e282cf46a541e4592b7081',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
 
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/09/03/夜跑助手App-路径规划的实现/" title="下一篇: 夜跑助手App-路径规划的实现">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/04/Js利用百度API进行坐标转换/">Js利用百度地图API进行坐标转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/夜跑助手App-路径规划的实现/">夜跑助手App-路径规划的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/">Ubuntu系统下的PostgreSQL安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/24/如何利用hexo发表文章/">如何利用hexo发表文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/GMap.net-for-WPF-使用心得/">GMap.net for WPF 使用心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Android学习心得/">Android学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/">GIS-for-Web应用开发之道-学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/git学习心得/">git学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/在VS中使用Github/">在VS中使用Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Github使用指南/">Github使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/C-中await和async/">C#中await和async</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Wpf使用MahApp-Metro主题/">Wpf使用MahApp.Metro主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/暑假旅游笔记/">2017年暑假旅游笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/">ISODATA算法学习心得及非监督分类软件得商业化界面实现</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -436,17 +574,6 @@ MathJax.Hub.Queue(function() {
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
