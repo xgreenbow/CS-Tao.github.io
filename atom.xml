@@ -104,7 +104,7 @@
     <link href="https://cs-tao.github.io/2017/09/02/Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84PostgreSQL%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
     <id>https://cs-tao.github.io/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/</id>
     <published>2017-09-02T15:20:58.000Z</published>
-    <updated>2017-09-04T17:39:44.464Z</updated>
+    <updated>2017-09-07T04:38:48.431Z</updated>
     
     <content type="html"><![CDATA[<p><strong> Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -115,7 +115,7 @@
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository <span class="string">"deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main"</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>载入apt-repository的签名</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget --quiet -O -</div><div class="line">https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</div></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</div></pre></td></tr></table></figure>
 </li>
 <li><p>更新package列表</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure>
