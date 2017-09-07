@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://cs-tao.github.io/2017/08/19/Github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2017-09-07T16:45:33.539Z</lastmod>
+    <data>
+        <display>
+        <title>Github使用指南</title>
+        <pubTime>2017-08-18T16:39:07.000Z</pubTime>
+        
+        <tag>Project</tag>
+         
+        <tag>Github</tag>
+         
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://cs-tao.github.io/2017/09/02/Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84PostgreSQL%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2017-09-07T04:38:48.431Z</lastmod>
     <data>
@@ -44,28 +68,6 @@
            
              
               <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/08/19/Github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2017-09-03T15:51:36.363Z</lastmod>
-    <data>
-        <display>
-        <title>Github使用指南</title>
-        <pubTime>2017-08-18T16:39:07.000Z</pubTime>
-        
-        <tag>Github</tag>
-         
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
           
         </display>
     </data>
@@ -251,6 +253,7 @@
     </url>
 
     
+    
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/Wpf%E4%BD%BF%E7%94%A8MahApp-Metro%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2017-08-19T08:57:45.373Z</lastmod>
@@ -274,7 +277,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/</loc>
