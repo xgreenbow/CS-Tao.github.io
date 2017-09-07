@@ -348,9 +348,9 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
     
   </entry>
   
@@ -373,20 +373,20 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
     
       <category term="VS" scheme="https://cs-tao.github.io/tags/VS/"/>
     
   </entry>
   
   <entry>
-    <title>Github使用指南</title>
-    <link href="https://cs-tao.github.io/2017/08/19/Github%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>https://cs-tao.github.io/2017/08/19/Github使用指南/</id>
+    <title>团队项目中Github的使用</title>
+    <link href="https://cs-tao.github.io/2017/08/19/%E5%9B%A2%E9%98%9F%E9%A1%B9%E7%9B%AE%E4%B8%ADGithub%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://cs-tao.github.io/2017/08/19/团队项目中Github的使用/</id>
     <published>2017-08-18T16:39:07.000Z</published>
-    <updated>2017-09-07T16:45:33.539Z</updated>
+    <updated>2017-09-07T16:46:44.254Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 前几个月学习了Github的使用，希望我的经验能帮助到那些想要了解和学习Github的人 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    本文将讲解团队项目中Github的基本使用，笔者的操作系统为Win10<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
@@ -428,9 +428,9 @@ git push origin master</code><br><br><img src="https://raw.githubusercontent.com
     
       <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
-      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
     
   </entry>
   
