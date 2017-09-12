@@ -270,9 +270,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
-    
       <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
+    
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
@@ -438,11 +438,11 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
     
       <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
+    
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
   </entry>
   
