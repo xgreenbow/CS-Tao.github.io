@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-09-21T02:46:01.845Z</updated>
+  <updated>2017-10-11T16:29:33.331Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于带登录界面的WPF应用的问题</title>
+    <link href="https://cs-tao.github.io/2017/10/11/%E5%85%B3%E4%BA%8E%E5%B8%A6%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E7%9A%84WPF%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://cs-tao.github.io/2017/10/11/关于带登录界面的WPF应用的问题/</id>
+    <published>2017-10-11T15:24:18.000Z</published>
+    <updated>2017-10-11T16:29:33.331Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 解决WPF关闭登录窗口后主窗口无法打开的问题 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    笔者最近在开发一款<a href="https://github.com/CS-Tao/View-Spot-of-City" target="_blank" rel="external">WPF应用程序</a>的时候，发现在登录窗口关闭之后，主窗口无法打开，遂上网搜索了一下，找到了问题所在<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<p>##问题描述<br>笔者通过重载App类OnStartup()函数，在其中添加了启动登录框的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //注册或登录</div><div class="line">    LoginDlg logindlg = new LoginDlg();</div><div class="line">    logindlg.ShowDialog();</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>却发现登录窗口关闭后不能启动主窗口（也就是WPF自动生成的MainWindow类对应的窗口）。</p>
+<p>##解决方法<br>将App的ShutdownMode属性改为OnExplicitShutdown即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //应用程序关闭时，才System.Windows.Application.Shutdown调用</div><div class="line">    this.ShutdownMode = ShutdownMode.OnExplicitShutdown;</div><div class="line"></div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //注册或登录</div><div class="line">    LoginDlg logindlg = new LoginDlg();</div><div class="line">    logindlg.ShowDialog();</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##出现问题的原因<br>由上我们可以看出问题的根源就是App的ShutdownMode属性，那么这个属性有什么意义呢？<br><br>我们可以很容易地知道ShutdownMode是一个枚举属性，其可能得取值有三个，分别是OnLastWindowClose、OnMainWindowClose、OnExplicitShutdown。<br>进一步探索笔者发现ShutdownMode属性的默认值为OnLastWindowClose，也就是WPF会在最后一个窗口关闭时隐式调用Application的Shutdown()函数，对此<a href="https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.shutdownmode(v=vs.100" target="_blank" rel="external">MSDN</a>.aspx)有提到：<br></p>
+<blockquote>
+<p>如果将 ShutdownMode 设置为 OnLastWindowClose，则 Windows Presentation Foundation (WPF) 会在应用程序中的最后一个窗口关闭时隐式调用 Shutdown，即使任何当前已经实例化的窗口被设置为主窗口也是如此（请参见 <a href="https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.mainwindow(v=vs.100" target="_blank" rel="external">MainWindow</a>.aspx)）。</p>
+</blockquote>
+<p>WPF会把第一个在AppDomain中实例化的第一个Window对象的引用，自动设置为应用程序的主窗口，也就是说当登录框实例化的时候，就被设置为主窗口了。且当登录窗口关闭时，没有任何其他的窗口处于显示状态，满足<code>OnLastWindowClose</code>的退出条件，WPF会隐式调用ShutDown()，以至于真正的主窗口无法显示。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 解决WPF关闭登录窗口后主窗口无法打开的问题 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    笔者最近在开发一款&lt;a href=&quot;https://github.com/CS-Tao/View-Spot-of-City&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WPF应用程序&lt;/a&gt;的时候，发现在登录窗口关闭之后，主窗口无法打开，遂上网搜索了一下，找到了问题所在&lt;br&gt;
+    
+    </summary>
+    
+      <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
+    
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
+    
+  </entry>
   
   <entry>
     <title>Android工具包-xUtils基本使用</title>
@@ -89,7 +121,7 @@
     
     <content type="html"><![CDATA[<p><strong> 百度地图API for JavaScript的使用 </strong><excerpt in="" index="" |="" 首页摘要=""><br>在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h2 id="导入js文件"><a href="#导入js文件" class="headerlink" title="导入js文件"></a>导入js文件</h2><p>在html文件中添加<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://api.map.baidu.com/api?v=1.2"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<h2 id="导入js文件"><a href="#导入js文件" class="headerlink" title="导入js文件"></a>导入js文件</h2><p>在html文件中添加<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://api.map.baidu.com/api?v=1.2"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="地理坐标转为平面坐标"><a href="#地理坐标转为平面坐标" class="headerlink" title="地理坐标转为平面坐标"></a>地理坐标转为平面坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> mercatorPoint = projection.lngLatToPoint(<span class="keyword">new</span> BMap.Point(<span class="number">114.3908</span>, <span class="number">30.4879</span>));</div><div class="line">alert(<span class="string">"x = "</span> + mercatorPoint.x + <span class="string">", y = "</span> + mercatorPoint.y);</div></pre></td></tr></table></figure>
 <h2 id="平面坐标转为地理坐标"><a href="#平面坐标转为地理坐标" class="headerlink" title="平面坐标转为地理坐标"></a>平面坐标转为地理坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> lngLat = projection.pointToLngLat(<span class="keyword">new</span> BMap.Pixel(<span class="number">12734064.16</span>, <span class="number">3544542.8</span>));</div><div class="line">alert(<span class="string">"lng = "</span> + lngLat.lng + <span class="string">", lat = "</span> + lngLat.lat);</div></pre></td></tr></table></figure>]]></content>
     
@@ -335,9 +367,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
-    
       <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
@@ -413,9 +445,9 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
     
   </entry>
   
@@ -438,9 +470,9 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
     
       <category term="VS" scheme="https://cs-tao.github.io/tags/VS/"/>
     
@@ -503,11 +535,11 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+      <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
     
   </entry>
   
