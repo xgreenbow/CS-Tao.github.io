@@ -65,9 +65,9 @@
     <link href="https://cs-tao.github.io/2017/10/18/WPF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%A1%86/"/>
     <id>https://cs-tao.github.io/2017/10/18/WPF自定义消息框/</id>
     <published>2017-10-18T00:19:17.000Z</published>
-    <updated>2017-10-18T14:43:41.416Z</updated>
+    <updated>2017-10-18T16:16:58.576Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> 一个语言文化的的WPF消息框 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至<a href="https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
+    <content type="html"><![CDATA[<p><strong> 一个更改按钮显示语言的的WPF消息框 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至<a href="https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><ul>
@@ -99,7 +99,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; 一个语言文化的的WPF消息框 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至&lt;a href=&quot;https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;br&gt;
+      &lt;p&gt;&lt;strong&gt; 一个更改按钮显示语言的的WPF消息框 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至&lt;a href=&quot;https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
@@ -466,9 +466,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
-    
       <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
+    
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
@@ -634,11 +634,11 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
     
       <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
+    
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
   </entry>
   
