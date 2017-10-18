@@ -65,7 +65,7 @@
     <link href="https://cs-tao.github.io/2017/10/18/WPF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%A1%86/"/>
     <id>https://cs-tao.github.io/2017/10/18/WPF自定义消息框/</id>
     <published>2017-10-18T00:19:17.000Z</published>
-    <updated>2017-10-18T14:09:09.486Z</updated>
+    <updated>2017-10-18T14:43:41.416Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 一个语言文化的的WPF消息框 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至<a href="https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -78,15 +78,21 @@
 </ul>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><ul>
 <li>引用本消息框所在程序集。</li>
-<li><p>在App.xaml文件中添加：<br></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"pack://application:,,,/CSTao.MessageBox;component/Resources.xaml"</span>/&gt;</span></div><div class="line">```<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">如下：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">![添加资源字典](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MessageBoxResoureCode.png)</div><div class="line"></div><div class="line">### 使用MessageBox</div><div class="line">- 在程序中需要使用的地方添加命名空间：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">```C#</div><div class="line">using CSTao.MessageBox;</div></pre></td></tr></table></figure>
+<li>在App.xaml文件中添加：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"pack://application:,,,/CSTao.MessageBox;component/Resources.xaml"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如下：<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MessageBoxResoureCode.png" alt="添加资源字典"></p>
+<h3 id="使用MessageBox"><a href="#使用MessageBox" class="headerlink" title="使用MessageBox"></a>使用MessageBox</h3><ul>
+<li><p>在程序中需要使用的地方添加命名空间：<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">using CSTao.MessageBox;</div></pre></td></tr></table></figure>
 </li>
 <li><p>调用MessageboxMaster.Show()函数，该函数有多个重载，请按您的需求使用。</p>
 <h3 id="使用语言切换"><a href="#使用语言切换" class="headerlink" title="使用语言切换"></a>使用语言切换</h3></li>
 <li>静态修改<br><br>将<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Languages\LanguagesDictionary.xaml</code>中的<code>Language.CN.xaml</code>改为<code>Language.EN.xaml</code>即可。</li>
-<li>动态修改<br><br>在您定义的修改语言的响应函数中添加代码<br><br>```C#<br>string requestedCulture = string.Format(@”pack://application:,,,/CSTao.MessageBox;component/Languages/Language.{0}.xaml”, languageDictionary[0或1]);<br>ResourceDictionary resourceDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault((x) =&gt;<br>{<br>  return (x.Source == null) ? false : (x.Source.OriginalString.Contains(“CSTao.MessageBox;component/Languages”));<br>});<br>if (resourceDictionary != null)<br>{<br>  Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);<br>  ResourceDictionary requestDictionary = new ResourceDictionary()<br>  {<pre><code>Source = new Uri(requestedCulture)
-</code></pre>  };<br>  Application.Current.Resources.MergedDictionaries.Add(requestDictionary);<br>}<br><code>``&lt;br&gt;</code>温馨提醒:`本方法是笔者用于全局改变软件语言的代码，不仅针对本消息框，慎用</li>
+<li>动态修改<br><br>在您定义的修改语言的响应函数中添加代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">string requestedCulture = string.Format(@&quot;pack://application:,,,/CSTao.MessageBox;component/Languages/Language.&#123;0&#125;.xaml&quot;, languageDictionary[0或1]);</div><div class="line">ResourceDictionary resourceDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault((x) =&gt;</div><div class="line">&#123;</div><div class="line">    return (x.Source == null) ? false : (x.Source.OriginalString.Contains(&quot;CSTao.MessageBox;component/Languages&quot;));</div><div class="line">&#125;);</div><div class="line">if (resourceDictionary != null)</div><div class="line">&#123;</div><div class="line">    Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);</div><div class="line">    ResourceDictionary requestDictionary = new ResourceDictionary()</div><div class="line">    &#123;</div><div class="line">        Source = new Uri(requestedCulture)</div><div class="line">    &#125;;</div><div class="line">    Application.Current.Resources.MergedDictionaries.Add(requestDictionary);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<p><code>温馨提醒:</code>本方法是笔者用于全局改变软件语言的代码，不仅针对本消息框，慎用</p>
 <h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>修改<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Resources.xaml</code>中<code>PrimaryHueBrush</code>键的值即可</p>
 <h2 id="特别感谢"><a href="#特别感谢" class="headerlink" title="特别感谢"></a>特别感谢</h2><p>感谢<a href="https://hpdell.github.io/" target="_blank" rel="external">师兄</a>提供的代码参考。</p>
 </the>]]></content>
@@ -111,10 +117,11 @@
     <link href="https://cs-tao.github.io/2017/10/11/%E5%85%B3%E4%BA%8E%E5%B8%A6%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E7%9A%84WPF%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://cs-tao.github.io/2017/10/11/关于带登录界面的WPF应用的问题/</id>
     <published>2017-10-11T15:24:18.000Z</published>
-    <updated>2017-10-18T00:14:49.160Z</updated>
+    <updated>2017-10-18T14:43:44.170Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 解决WPF关闭登录窗口后主窗口无法打开的问题 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    笔者最近在开发一款<a href="https://github.com/CS-Tao/View-Spot-of-City" target="_blank" rel="external">WPF应用程序</a>的时候，发现在登录窗口关闭之后，主窗口无法打开，遂上网搜索了一下，找到了问题所在<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
 <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>笔者通过重载App类OnStartup()函数，在其中添加了启动登录框的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //登录</div><div class="line">    bool? loginDlgResult = (new LoginDlg()).ShowDialog();</div><div class="line">    if (!loginDlgResult.HasValue || !loginDlgResult.Value)</div><div class="line">        Environment.Exit(0);</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>却发现登录窗口关闭后不能启动主窗口（也就是WPF自动生成的MainWindow类对应的窗口）。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将App的ShutdownMode属性改为OnExplicitShutdown即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //应用程序关闭时，才System.Windows.Application.Shutdown调用</div><div class="line">    this.ShutdownMode = ShutdownMode.OnExplicitShutdown;</div><div class="line"></div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //登录</div><div class="line">    bool? loginDlgResult = (new LoginDlg()).ShowDialog();</div><div class="line">    if (!loginDlgResult.HasValue || !loginDlgResult.Value)</div><div class="line">        Environment.Exit(0);</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -124,7 +131,7 @@
 <p>如果将 ShutdownMode 设置为 OnLastWindowClose，则 Windows Presentation Foundation (WPF) 会在应用程序中的最后一个窗口关闭时隐式调用 Shutdown，即使任何当前已经实例化的窗口被设置为主窗口也是如此。请参见 <a href="https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.mainwindow(v=vs.100).aspx" target="_blank" rel="external">https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.mainwindow(v=vs.100).aspx</a></p>
 </blockquote>
 <p>WPF会把第一个在AppDomain中实例化的第一个Window对象的引用，自动设置为应用程序的主窗口，也就是说当登录框实例化的时候，就被设置为主窗口了。且当登录窗口关闭时，没有任何其他的窗口处于显示状态，满足<code>OnLastWindowClose</code>的退出条件，WPF会隐式调用ShutDown()，以至于真正的主窗口无法显示。</p>
-]]></content>
+</the>]]></content>
     
     <summary type="html">
     

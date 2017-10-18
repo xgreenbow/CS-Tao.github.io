@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://cs-tao.github.io/2017/10/11/%E5%85%B3%E4%BA%8E%E5%B8%A6%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E7%9A%84WPF%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-10-18T14:43:44.170Z</lastmod>
+    <data>
+        <display>
+        <title>关于带登录界面的WPF应用的问题</title>
+        <pubTime>2017-10-11T15:24:18.000Z</pubTime>
+        
+        <tag>Wpf</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cs-tao.github.io/2017/10/18/WPF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%A1%86/</loc>
+    <lastmod>2017-10-18T14:43:41.416Z</lastmod>
+    <data>
+        <display>
+        <title>WPF自定义消息框</title>
+        <pubTime>2017-10-18T00:19:17.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>Wpf</tag>
+         
+         
+           
+             
+              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://cs-tao.github.io/2017/10/18/%E8%A7%A3%E5%86%B3C-%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2017-10-18T14:41:47.940Z</lastmod>
     <data>
@@ -39,48 +81,6 @@
            
              
               <breadCrumb title="language" url="https://cs-tao.github.io/categories/language/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/10/18/WPF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%A1%86/</loc>
-    <lastmod>2017-10-18T14:09:09.486Z</lastmod>
-    <data>
-        <display>
-        <title>WPF自定义消息框</title>
-        <pubTime>2017-10-18T00:19:17.000Z</pubTime>
-        
-        <tag>C#</tag>
-         
-        <tag>Wpf</tag>
-         
-         
-           
-             
-              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cs-tao.github.io/2017/10/11/%E5%85%B3%E4%BA%8E%E5%B8%A6%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E7%9A%84WPF%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-10-18T00:14:49.160Z</lastmod>
-    <data>
-        <display>
-        <title>关于带登录界面的WPF应用的问题</title>
-        <pubTime>2017-10-11T15:24:18.000Z</pubTime>
-        
-        <tag>Wpf</tag>
-         
-         
-           
-             
-              <breadCrumb title="software" url="https://cs-tao.github.io/categories/software/"/>
           
         </display>
     </data>

@@ -21,7 +21,8 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNo2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel2.png">
-<meta property="og:updated_time" content="2017-10-18T14:09:09.486Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MessageBoxResoureCode.png">
+<meta property="og:updated_time" content="2017-10-18T14:43:41.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WPF自定义消息框">
 <meta name="twitter:description" content="一个语言文化的的WPF消息框  消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至Github">
@@ -356,15 +357,21 @@
 </ul>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><ul>
 <li>引用本消息框所在程序集。</li>
-<li><p>在App.xaml文件中添加：<br></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"pack://application:,,,/CSTao.MessageBox;component/Resources.xaml"</span>/&gt;</span></div><div class="line">```<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">如下：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">![添加资源字典](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MessageBoxResoureCode.png)</div><div class="line"></div><div class="line">### 使用MessageBox</div><div class="line">- 在程序中需要使用的地方添加命名空间：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">```C#</div><div class="line">using CSTao.MessageBox;</div></pre></td></tr></table></figure>
+<li>在App.xaml文件中添加：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"pack://application:,,,/CSTao.MessageBox;component/Resources.xaml"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如下：<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MessageBoxResoureCode.png" alt="添加资源字典"></p>
+<h3 id="使用MessageBox"><a href="#使用MessageBox" class="headerlink" title="使用MessageBox"></a>使用MessageBox</h3><ul>
+<li><p>在程序中需要使用的地方添加命名空间：<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">using CSTao.MessageBox;</div></pre></td></tr></table></figure>
 </li>
 <li><p>调用MessageboxMaster.Show()函数，该函数有多个重载，请按您的需求使用。</p>
 <h3 id="使用语言切换"><a href="#使用语言切换" class="headerlink" title="使用语言切换"></a>使用语言切换</h3></li>
 <li>静态修改<br><br>将<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Languages\LanguagesDictionary.xaml</code>中的<code>Language.CN.xaml</code>改为<code>Language.EN.xaml</code>即可。</li>
-<li>动态修改<br><br>在您定义的修改语言的响应函数中添加代码<br><br>```C#<br>string requestedCulture = string.Format(@”pack://application:,,,/CSTao.MessageBox;component/Languages/Language.{0}.xaml”, languageDictionary[0或1]);<br>ResourceDictionary resourceDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault((x) =&gt;<br>{<br>  return (x.Source == null) ? false : (x.Source.OriginalString.Contains(“CSTao.MessageBox;component/Languages”));<br>});<br>if (resourceDictionary != null)<br>{<br>  Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);<br>  ResourceDictionary requestDictionary = new ResourceDictionary()<br>  {<pre><code>Source = new Uri(requestedCulture)
-</code></pre>  };<br>  Application.Current.Resources.MergedDictionaries.Add(requestDictionary);<br>}<br><code>``&lt;br&gt;</code>温馨提醒:`本方法是笔者用于全局改变软件语言的代码，不仅针对本消息框，慎用</li>
+<li>动态修改<br><br>在您定义的修改语言的响应函数中添加代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">string requestedCulture = string.Format(@&quot;pack://application:,,,/CSTao.MessageBox;component/Languages/Language.&#123;0&#125;.xaml&quot;, languageDictionary[0或1]);</div><div class="line">ResourceDictionary resourceDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault((x) =&gt;</div><div class="line">&#123;</div><div class="line">    return (x.Source == null) ? false : (x.Source.OriginalString.Contains(&quot;CSTao.MessageBox;component/Languages&quot;));</div><div class="line">&#125;);</div><div class="line">if (resourceDictionary != null)</div><div class="line">&#123;</div><div class="line">    Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);</div><div class="line">    ResourceDictionary requestDictionary = new ResourceDictionary()</div><div class="line">    &#123;</div><div class="line">        Source = new Uri(requestedCulture)</div><div class="line">    &#125;;</div><div class="line">    Application.Current.Resources.MergedDictionaries.Add(requestDictionary);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<p><code>温馨提醒:</code>本方法是笔者用于全局改变软件语言的代码，不仅针对本消息框，慎用</p>
 <h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>修改<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Resources.xaml</code>中<code>PrimaryHueBrush</code>键的值即可</p>
 <h2 id="特别感谢"><a href="#特别感谢" class="headerlink" title="特别感谢"></a>特别感谢</h2><p>感谢<a href="https://hpdell.github.io/" target="_blank" rel="external">师兄</a>提供的代码参考。</p>
 </the>
@@ -379,7 +386,7 @@
         <p><span>本文标题:</span><a href="/2017/10/18/WPF自定义消息框/">WPF自定义消息框</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
         <p><span>发布时间:</span>2017年10月18日 - 08时19分</p>
-        <p><span>最后更新:</span>2017年10月18日 - 22时09分</p>
+        <p><span>最后更新:</span>2017年10月18日 - 22时43分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/18/WPF自定义消息框/" title="WPF自定义消息框">https://cs-tao.github.io/2017/10/18/WPF自定义消息框/</a>
             <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/10/18/WPF自定义消息框/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -417,7 +424,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#效果预览"><span class="toc-number">1.</span> <span class="toc-text">效果预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">2.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先"><span class="toc-number">2.1.</span> <span class="toc-text">首先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用语言切换"><span class="toc-number">2.2.</span> <span class="toc-text">使用语言切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改主题颜色"><span class="toc-number">2.3.</span> <span class="toc-text">修改主题颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特别感谢"><span class="toc-number">3.</span> <span class="toc-text">特别感谢</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#效果预览"><span class="toc-number">1.</span> <span class="toc-text">效果预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">2.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先"><span class="toc-number">2.1.</span> <span class="toc-text">首先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用MessageBox"><span class="toc-number">2.2.</span> <span class="toc-text">使用MessageBox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用语言切换"><span class="toc-number">2.3.</span> <span class="toc-text">使用语言切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改主题颜色"><span class="toc-number">2.4.</span> <span class="toc-text">修改主题颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特别感谢"><span class="toc-number">3.</span> <span class="toc-text">特别感谢</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 

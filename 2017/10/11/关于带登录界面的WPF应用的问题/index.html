@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="梦觉知晓的博客">
 <meta property="og:description" content="解决WPF关闭登录窗口后主窗口无法打开的问题      笔者最近在开发一款WPF应用程序的时候，发现在登录窗口关闭之后，主窗口无法打开，遂上网搜索了一下，找到了问题所在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-18T00:14:49.160Z">
+<meta property="og:updated_time" content="2017-10-18T14:43:44.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于带登录界面的WPF应用的问题">
 <meta name="twitter:description" content="解决WPF关闭登录窗口后主窗口无法打开的问题      笔者最近在开发一款WPF应用程序的时候，发现在登录窗口关闭之后，主窗口无法打开，遂上网搜索了一下，找到了问题所在">
@@ -337,7 +337,8 @@
       
           
         <p><strong> 解决WPF关闭登录窗口后主窗口无法打开的问题 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    笔者最近在开发一款<a href="https://github.com/CS-Tao/View-Spot-of-City" target="_blank" rel="external">WPF应用程序</a>的时候，发现在登录窗口关闭之后，主窗口无法打开，遂上网搜索了一下，找到了问题所在<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
 <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>笔者通过重载App类OnStartup()函数，在其中添加了启动登录框的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //登录</div><div class="line">    bool? loginDlgResult = (new LoginDlg()).ShowDialog();</div><div class="line">    if (!loginDlgResult.HasValue || !loginDlgResult.Value)</div><div class="line">        Environment.Exit(0);</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>却发现登录窗口关闭后不能启动主窗口（也就是WPF自动生成的MainWindow类对应的窗口）。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将App的ShutdownMode属性改为OnExplicitShutdown即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //应用程序关闭时，才System.Windows.Application.Shutdown调用</div><div class="line">    this.ShutdownMode = ShutdownMode.OnExplicitShutdown;</div><div class="line"></div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //登录</div><div class="line">    bool? loginDlgResult = (new LoginDlg()).ShowDialog();</div><div class="line">    if (!loginDlgResult.HasValue || !loginDlgResult.Value)</div><div class="line">        Environment.Exit(0);</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -347,7 +348,7 @@
 <p>如果将 ShutdownMode 设置为 OnLastWindowClose，则 Windows Presentation Foundation (WPF) 会在应用程序中的最后一个窗口关闭时隐式调用 Shutdown，即使任何当前已经实例化的窗口被设置为主窗口也是如此。请参见 <a href="https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.mainwindow(v=vs.100).aspx" target="_blank" rel="external">https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.mainwindow(v=vs.100).aspx</a></p>
 </blockquote>
 <p>WPF会把第一个在AppDomain中实例化的第一个Window对象的引用，自动设置为应用程序的主窗口，也就是说当登录框实例化的时候，就被设置为主窗口了。且当登录窗口关闭时，没有任何其他的窗口处于显示状态，满足<code>OnLastWindowClose</code>的退出条件，WPF会隐式调用ShutDown()，以至于真正的主窗口无法显示。</p>
-
+</the>
       
       
     </div>
@@ -359,7 +360,7 @@
         <p><span>本文标题:</span><a href="/2017/10/11/关于带登录界面的WPF应用的问题/">关于带登录界面的WPF应用的问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
         <p><span>发布时间:</span>2017年10月11日 - 23时24分</p>
-        <p><span>最后更新:</span>2017年10月18日 - 08时14分</p>
+        <p><span>最后更新:</span>2017年10月18日 - 22时43分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/11/关于带登录界面的WPF应用的问题/" title="关于带登录界面的WPF应用的问题">https://cs-tao.github.io/2017/10/11/关于带登录界面的WPF应用的问题/</a>
             <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/10/11/关于带登录界面的WPF应用的问题/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
