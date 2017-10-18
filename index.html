@@ -217,7 +217,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Github/" style="font-size: 16.67px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/JacaScript/" style="font-size: 10px;">JacaScript</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/Js/" style="font-size: 10px;">Js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Project/" style="font-size: 13.33px;">Project</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VS/" style="font-size: 10px;">VS</a> <a href="/tags/WebAPI/" style="font-size: 10px;">WebAPI</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 16.67px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a> <a href="/tags/xUtils/" style="font-size: 10px;">xUtils</a> <a href="/tags/百度API/" style="font-size: 10px;">百度API</a>
+                        <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/C/" style="font-size: 20px;">C#</a> <a href="/tags/GIS/" style="font-size: 10px;">GIS</a> <a href="/tags/GMap-net/" style="font-size: 10px;">GMap.net</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ISODATA/" style="font-size: 10px;">ISODATA</a> <a href="/tags/JacaScript/" style="font-size: 10px;">JacaScript</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/Js/" style="font-size: 10px;">Js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Project/" style="font-size: 12.5px;">Project</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VS/" style="font-size: 10px;">VS</a> <a href="/tags/WebAPI/" style="font-size: 10px;">WebAPI</a> <a href="/tags/WinForm/" style="font-size: 10px;">WinForm</a> <a href="/tags/Wpf/" style="font-size: 17.5px;">Wpf</a> <a href="/tags/Xaml/" style="font-size: 10px;">Xaml</a> <a href="/tags/xUtils/" style="font-size: 10px;">xUtils</a> <a href="/tags/百度API/" style="font-size: 10px;">百度API</a>
                     </div>
                 </section>
                 
@@ -300,6 +300,153 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-解决C-发送电子邮件失败的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/18/解决C-发送电子邮件失败的问题/" class="article-date">
+      <time datetime="2017-10-18T00:21:15.000Z" itemprop="datePublished">2017-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/18/解决C-发送电子邮件失败的问题/">解决C#发送电子邮件失败的问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><ul>
+<li>EmailHelper.cs文件内容</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Text;</div><div class="line">using System.Net.Mail;</div><div class="line">using static System.Configuration.ConfigurationManager;</div><div class="line"></div><div class="line">namespace View_Spot_of_City.UIControls.Helper</div><div class="line">&#123;</div><div class="line">    public static class EmailHelper</div><div class="line">    &#123;</div><div class="line">        public static bool SendEmail(string mail, string title, string content)</div><div class="line">        &#123;</div><div class="line">            MailMessage message = new MailMessage();</div><div class="line">            &#123;</div><div class="line">                message.To.Add(mail);</div><div class="line">                message.From = new MailAddress(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_NAME&quot;], Encoding.UTF8);</div><div class="line">                message.Subject =title;</div><div class="line">                message.SubjectEncoding = Encoding.UTF8;</div><div class="line">                message.Body = content;</div><div class="line">                message.BodyEncoding = Encoding.UTF8;</div><div class="line">                message.IsBodyHtml = false;</div><div class="line">                message.Priority = MailPriority.Normal;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            SmtpClient smtp = new SmtpClient();</div><div class="line">            &#123;</div><div class="line">                smtp.Host = AppSettings[&quot;SmtpClient_HOST&quot;];</div><div class="line">                smtp.EnableSsl = true;</div><div class="line">                smtp.UseDefaultCredentials = false;</div><div class="line">                smtp.Credentials = new System.Net.NetworkCredential(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_PASSWORD&quot;]);</div><div class="line">            &#125;</div><div class="line">            object userState = message;</div><div class="line">            try</div><div class="line">            &#123;</div><div class="line">                smtp.SendAsync(message, userState);</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">            catch(Exception ex)</div><div class="line">            &#123;</div><div class="line">                Console.Write(ex.Message);</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>配置文件App.Config内容<ul>
+<li>添加``程序集的引用</li>
+<li>在App.Config文件中添加键值，如下（只需要关注appSettings标签内的内容）<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">    &lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">configSections</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">"entityFramework"</span> <span class="attr">type</span>=<span class="string">"System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=*************"</span> <span class="attr">requirePermission</span>=<span class="string">"false"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">startup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">supportedRuntime</span> <span class="attr">version</span>=<span class="string">"v4.0"</span> <span class="attr">sku</span>=<span class="string">".NETFramework,Version=v4.5.2"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">startup</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">appSettings</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--邮箱--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_NUM"</span> <span class="attr">value</span>=<span class="string">"123456789@qq.com"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--邮箱密码--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_PASSWORD"</span> <span class="attr">value</span>=<span class="string">"邮箱密码，QQ邮箱需要许可码"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--邮件显示名--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_NAME"</span> <span class="attr">value</span>=<span class="string">"发送邮件使用的用户名"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--QQ邮箱对应的SMTP服务器--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"SmtpClient_HOST"</span> <span class="attr">value</span>=<span class="string">"smtp.qq.com"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">appSettings</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>若使用QQ邮箱，输入密码为许可码，需要在QQ邮箱中打开SMTP服务</p>
+<ul>
+<li>打开QQ邮箱网页版</li>
+<li>点击左上角“设置”，并在导航栏中点击账户标签</li>
+<li>开启SMTP服务并获得许可码<br>  <img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png" alt="开启SMTP服务"></li>
+</ul>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/software/">software</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-WPF自定义消息框" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/18/WPF自定义消息框/" class="article-date">
+      <time datetime="2017-10-18T00:19:17.000Z" itemprop="datePublished">2017-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/18/WPF自定义消息框/">WPF自定义消息框</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><strong> 一个语言文化的的WPF消息框 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至<a href="https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0" target="_blank" rel="external">Github</a><br>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/software/">software</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/10/18/WPF自定义消息框/#more">查看更多 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-关于带登录界面的WPF应用的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -819,140 +966,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/08/19/Android学习心得/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-GIS-for-Web应用开发之道-学习心得" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/" class="article-date">
-      <time datetime="2017-08-18T16:41:35.000Z" itemprop="datePublished">2017-08-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/">GIS-for-Web应用开发之道-学习心得</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> GIS-for-Web应用开发之道 读书心得 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    在此感谢<a href="http://urbancolab.org/" title="Chaogui Kang" target="_blank" rel="external">康老师</a>的指导<br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/">GIS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/#more">查看更多 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git学习心得" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/19/git学习心得/" class="article-date">
-      <time datetime="2017-08-18T16:39:49.000Z" itemprop="datePublished">2017-08-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/19/git学习心得/">git学习心得</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong> git命令行学习小记 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    利用git命令行托管代码到github。搭建自己的git服务<br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/software/">software</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/08/19/git学习心得/#more">查看更多 >></a>
         </p>
       
       <div class="clearfix"></div>

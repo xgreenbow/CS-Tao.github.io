@@ -3,18 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Wpf | 梦觉知晓的博客</title>
+  <title>WPF自定义消息框 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="梦觉知晓的博客主页">
-<meta property="og:type" content="website">
-<meta property="og:title" content="梦觉知晓的博客">
-<meta property="og:url" content="https://cs-tao.github.io/tags/Wpf/index.html">
+  <meta name="description" content="一个语言文化的的WPF消息框  消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至Github">
+<meta name="keywords" content="C#,Wpf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WPF自定义消息框">
+<meta property="og:url" content="https://cs-tao.github.io/2017/10/18/WPF自定义消息框/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
-<meta property="og:description" content="梦觉知晓的博客主页">
+<meta property="og:description" content="一个语言文化的的WPF消息框  消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至Github">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OK1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OK2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OKCancel1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OKCancel2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNo1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNo2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel2.png">
+<meta property="og:updated_time" content="2017-10-18T14:09:09.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梦觉知晓的博客">
-<meta name="twitter:description" content="梦觉知晓的博客主页">
+<meta name="twitter:title" content="WPF自定义消息框">
+<meta name="twitter:description" content="一个语言文化的的WPF消息框  消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至Github">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OK1.png">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
@@ -56,9 +67,9 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
-          isTag: true,
+          isTag: false,
           isCategory: false,
           open_in_new: false
       }
@@ -292,198 +303,222 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-WPF自定义消息框" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/10/18/解决C-发送电子邮件失败的问题/" class="archive-article-date">
-      <time datetime="2017-10-18T00:21:15.000Z" itemprop="datePublished">10-18</time>
+    <div class="article-meta">
+      <a href="/2017/10/18/WPF自定义消息框/" class="article-date">
+      <time datetime="2017-10-18T00:19:17.000Z" itemprop="datePublished">2017-10-18</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/18/解决C-发送电子邮件失败的问题/">解决C#发送电子邮件失败的问题</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      WPF自定义消息框
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/software/">software</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> 一个语言文化的的WPF消息框 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至<a href="https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><ul>
+<li>带OK按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OK1.png" alt="带OK按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OK2.png" alt="带OK按钮的消息框"></li>
+<li>带OK和取Cancel按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OKCancel1.png" alt="带OK和取Cancel按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OKCancel2.png" alt="带OK和取Cancel按钮的消息框"></li>
+<li>带Yes和No按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNo1.png" alt="带Yes和No按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNo2.png" alt="带Yes和No按钮的消息框"></li>
+<li>带Yes、No和Cancel按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel1.png" alt="带Yes、No和Cancel按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel2.png" alt="带Yes、No和Cancel按钮的消息框"></li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><ul>
+<li>引用本消息框所在程序集。</li>
+<li><p>在App.xaml文件中添加：<br></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"pack://application:,,,/CSTao.MessageBox;component/Resources.xaml"</span>/&gt;</span></div><div class="line">```<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">如下：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">![添加资源字典](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MessageBoxResoureCode.png)</div><div class="line"></div><div class="line">### 使用MessageBox</div><div class="line">- 在程序中需要使用的地方添加命名空间：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">```C#</div><div class="line">using CSTao.MessageBox;</div></pre></td></tr></table></figure>
+</li>
+<li><p>调用MessageboxMaster.Show()函数，该函数有多个重载，请按您的需求使用。</p>
+<h3 id="使用语言切换"><a href="#使用语言切换" class="headerlink" title="使用语言切换"></a>使用语言切换</h3></li>
+<li>静态修改<br><br>将<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Languages\LanguagesDictionary.xaml</code>中的<code>Language.CN.xaml</code>改为<code>Language.EN.xaml</code>即可。</li>
+<li>动态修改<br><br>在您定义的修改语言的响应函数中添加代码<br><br>```C#<br>string requestedCulture = string.Format(@”pack://application:,,,/CSTao.MessageBox;component/Languages/Language.{0}.xaml”, languageDictionary[0或1]);<br>ResourceDictionary resourceDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault((x) =&gt;<br>{<br>  return (x.Source == null) ? false : (x.Source.OriginalString.Contains(“CSTao.MessageBox;component/Languages”));<br>});<br>if (resourceDictionary != null)<br>{<br>  Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);<br>  ResourceDictionary requestDictionary = new ResourceDictionary()<br>  {<pre><code>Source = new Uri(requestedCulture)
+</code></pre>  };<br>  Application.Current.Resources.MergedDictionaries.Add(requestDictionary);<br>}<br><code>``&lt;br&gt;</code>温馨提醒:`本方法是笔者用于全局改变软件语言的代码，不仅针对本消息框，慎用</li>
+</ul>
+<h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>修改<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Resources.xaml</code>中<code>PrimaryHueBrush</code>键的值即可</p>
+<h2 id="特别感谢"><a href="#特别感谢" class="headerlink" title="特别感谢"></a>特别感谢</h2><p>感谢<a href="https://hpdell.github.io/" target="_blank" rel="external">师兄</a>提供的代码参考。</p>
+</the>
+      
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/10/18/WPF自定义消息框/">WPF自定义消息框</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
+        <p><span>发布时间:</span>2017年10月18日 - 08时19分</p>
+        <p><span>最后更新:</span>2017年10月18日 - 22时09分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/18/WPF自定义消息框/" title="WPF自定义消息框">https://cs-tao.github.io/2017/10/18/WPF自定义消息框/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/10/18/WPF自定义消息框/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/10/18/解决C-发送电子邮件失败的问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          解决C#发送电子邮件失败的问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/11/关于带登录界面的WPF应用的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于带登录界面的WPF应用的问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/10/18/WPF自定义消息框/" class="archive-article-date">
-      <time datetime="2017-10-18T00:19:17.000Z" itemprop="datePublished">10-18</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/18/WPF自定义消息框/">WPF自定义消息框</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/software/">software</a>
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#效果预览"><span class="toc-number">1.</span> <span class="toc-text">效果预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">2.</span> <span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先"><span class="toc-number">2.1.</span> <span class="toc-text">首先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用语言切换"><span class="toc-number">2.2.</span> <span class="toc-text">使用语言切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改主题颜色"><span class="toc-number">2.3.</span> <span class="toc-text">修改主题颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特别感谢"><span class="toc-number">3.</span> <span class="toc-text">特别感谢</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.min.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'CS-Tao',
+      repo: 'CS-Tao.github.io',
+      oauth: {
+        client_id: '6a448300be1a650075b2',
+        client_secret: 'f411a9ef700c4580c3e282cf46a541e4592b7081',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/10/18/解决C-发送电子邮件失败的问题/" title="上一篇: 解决C#发送电子邮件失败的问题">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/10/11/关于带登录界面的WPF应用的问题/" title="下一篇: 关于带登录界面的WPF应用的问题">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/解决C-发送电子邮件失败的问题/">解决C#发送电子邮件失败的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/WPF自定义消息框/">WPF自定义消息框</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/关于带登录界面的WPF应用的问题/">关于带登录界面的WPF应用的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/21/Android工具包-xUtils基本使用/">Android工具包-xUtils基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/04/Js利用百度API进行坐标转换/">Js利用百度地图API进行坐标转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/夜跑助手App-路径规划的实现/">夜跑助手App-路径规划的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/">Ubuntu系统下的PostgreSQL安装和配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/24/如何利用hexo发表文章/">如何利用hexo发表文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/GMap.net-for-WPF-使用心得/">GMap.net for WPF 使用心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Android学习心得/">Android学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/">GIS-for-Web应用开发之道-学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/git学习心得/">git学习心得</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/在VS中使用Github/">在VS中使用Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/团队项目中Github的使用/">团队项目中Github的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/C-中await和async/">C#中await和async</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/Wpf使用MahApp-Metro主题/">Wpf使用MahApp.Metro主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/暑假旅游笔记/">2017年暑假旅游笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/ISODATA算法学习心得及非监督分类软件得商业化界面实现/">ISODATA算法学习心得及非监督分类软件得商业化界面实现</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/10/11/关于带登录界面的WPF应用的问题/" class="archive-article-date">
-      <time datetime="2017-10-11T15:24:18.000Z" itemprop="datePublished">10-11</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/11/关于带登录界面的WPF应用的问题/">关于带登录界面的WPF应用的问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/software/">software</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/19/GMap.net-for-WPF-使用心得/" class="archive-article-date">
-      <time datetime="2017-08-19T08:42:23.000Z" itemprop="datePublished">08-19</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/19/GMap.net-for-WPF-使用心得/">GMap.net for WPF 使用心得</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/software/">software</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GMap-net/">GMap.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Project/">Project</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/19/Wpf使用MahApp-Metro主题/" class="archive-article-date">
-      <time datetime="2017-08-18T16:21:28.000Z" itemprop="datePublished">08-19</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/19/Wpf使用MahApp-Metro主题/">Wpf使用MahApp.Metro主题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/language/">language</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xaml/">Xaml</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -592,17 +627,6 @@ MathJax.Hub.Queue(function() {
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

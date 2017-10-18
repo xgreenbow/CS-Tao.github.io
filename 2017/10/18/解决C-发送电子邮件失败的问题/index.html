@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>GIS-for-Web应用开发之道-学习心得 | 梦觉知晓的博客</title>
+  <title>解决C#发送电子邮件失败的问题 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GIS-for-Web应用开发之道 读书心得      在此感谢康老师的指导">
-<meta name="keywords" content="GIS">
+  <meta name="description" content="源码 EmailHelper.cs文件内容  1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Text;using System.Net.Mail;using static System.Configuration.Configurati">
+<meta name="keywords" content="C#,Wpf">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GIS-for-Web应用开发之道-学习心得">
-<meta property="og:url" content="https://cs-tao.github.io/2017/08/19/GIS-for-Web应用开发之道-学习心得/index.html">
+<meta property="og:title" content="解决C#发送电子邮件失败的问题">
+<meta property="og:url" content="https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
-<meta property="og:description" content="GIS-for-Web应用开发之道 读书心得      在此感谢康老师的指导">
+<meta property="og:description" content="源码 EmailHelper.cs文件内容  1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Text;using System.Net.Mail;using static System.Configuration.Configurati">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-21T19:27:57.338Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png">
+<meta property="og:updated_time" content="2017-10-18T14:32:25.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GIS-for-Web应用开发之道-学习心得">
-<meta name="twitter:description" content="GIS-for-Web应用开发之道 读书心得      在此感谢康老师的指导">
+<meta name="twitter:title" content="解决C#发送电子邮件失败的问题">
+<meta name="twitter:description" content="源码 EmailHelper.cs文件内容  1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Text;using System.Net.Mail;using static System.Configuration.Configurati">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
   
@@ -294,11 +296,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-GIS-for-Web应用开发之道-学习心得" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-解决C-发送电子邮件失败的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/" class="article-date">
-      <time datetime="2017-08-18T16:41:35.000Z" itemprop="datePublished">2017-08-19</time>
+      <a href="/2017/10/18/解决C-发送电子邮件失败的问题/" class="article-date">
+      <time datetime="2017-10-18T00:21:15.000Z" itemprop="datePublished">2017-10-18</time>
 </a>
     </div>
   
@@ -311,7 +313,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      GIS-for-Web应用开发之道-学习心得
+      解决C#发送电子邮件失败的问题
     </h1>
   
 
@@ -320,13 +322,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/web/">web</a>
+    <a class="article-category-link" href="/categories/software/">software</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GIS/">GIS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wpf/">Wpf</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -336,8 +338,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> GIS-for-Web应用开发之道 读书心得 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    在此感谢<a href="http://urbancolab.org/" title="Chaogui Kang" target="_blank" rel="external">康老师</a>的指导<br><a id="more"></a></excerpt></p>
-<the rest="" of="" contents="" |="" 余下全文=""></the>
+        <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><ul>
+<li>EmailHelper.cs文件内容</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Text;</div><div class="line">using System.Net.Mail;</div><div class="line">using static System.Configuration.ConfigurationManager;</div><div class="line"></div><div class="line">namespace View_Spot_of_City.UIControls.Helper</div><div class="line">&#123;</div><div class="line">    public static class EmailHelper</div><div class="line">    &#123;</div><div class="line">        public static bool SendEmail(string mail, string title, string content)</div><div class="line">        &#123;</div><div class="line">            MailMessage message = new MailMessage();</div><div class="line">            &#123;</div><div class="line">                message.To.Add(mail);</div><div class="line">                message.From = new MailAddress(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_NAME&quot;], Encoding.UTF8);</div><div class="line">                message.Subject =title;</div><div class="line">                message.SubjectEncoding = Encoding.UTF8;</div><div class="line">                message.Body = content;</div><div class="line">                message.BodyEncoding = Encoding.UTF8;</div><div class="line">                message.IsBodyHtml = false;</div><div class="line">                message.Priority = MailPriority.Normal;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            SmtpClient smtp = new SmtpClient();</div><div class="line">            &#123;</div><div class="line">                smtp.Host = AppSettings[&quot;SmtpClient_HOST&quot;];</div><div class="line">                smtp.EnableSsl = true;</div><div class="line">                smtp.UseDefaultCredentials = false;</div><div class="line">                smtp.Credentials = new System.Net.NetworkCredential(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_PASSWORD&quot;]);</div><div class="line">            &#125;</div><div class="line">            object userState = message;</div><div class="line">            try</div><div class="line">            &#123;</div><div class="line">                smtp.SendAsync(message, userState);</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">            catch(Exception ex)</div><div class="line">            &#123;</div><div class="line">                Console.Write(ex.Message);</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>配置文件App.Config内容<ul>
+<li>添加``程序集的引用</li>
+<li>在App.Config文件中添加键值，如下（只需要关注appSettings标签内的内容）<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">    &lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">configSections</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">"entityFramework"</span> <span class="attr">type</span>=<span class="string">"System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=*************"</span> <span class="attr">requirePermission</span>=<span class="string">"false"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">startup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">supportedRuntime</span> <span class="attr">version</span>=<span class="string">"v4.0"</span> <span class="attr">sku</span>=<span class="string">".NETFramework,Version=v4.5.2"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">startup</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">appSettings</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--邮箱--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_NUM"</span> <span class="attr">value</span>=<span class="string">"123456789@qq.com"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--邮箱密码--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_PASSWORD"</span> <span class="attr">value</span>=<span class="string">"邮箱密码，QQ邮箱需要许可码"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--邮件显示名--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_NAME"</span> <span class="attr">value</span>=<span class="string">"发送邮件使用的用户名"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--QQ邮箱对应的SMTP服务器--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"SmtpClient_HOST"</span> <span class="attr">value</span>=<span class="string">"smtp.qq.com"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">appSettings</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>若使用QQ邮箱，输入密码为许可码，需要在QQ邮箱中打开SMTP服务</p>
+<ul>
+<li>打开QQ邮箱网页版</li>
+<li>点击左上角“设置”，并在导航栏中点击账户标签</li>
+<li>开启SMTP服务并获得许可码<br>  <img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png" alt="开启SMTP服务"></li>
+</ul>
+
       
       
     </div>
@@ -346,13 +365,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/">GIS-for-Web应用开发之道-学习心得</a></p>
+        <p><span>本文标题:</span><a href="/2017/10/18/解决C-发送电子邮件失败的问题/">解决C#发送电子邮件失败的问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
-        <p><span>发布时间:</span>2017年08月19日 - 00时41分</p>
-        <p><span>最后更新:</span>2017年08月22日 - 03时27分</p>
+        <p><span>发布时间:</span>2017年10月18日 - 08时21分</p>
+        <p><span>最后更新:</span>2017年10月18日 - 22时32分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/19/GIS-for-Web应用开发之道-学习心得/" title="GIS-for-Web应用开发之道-学习心得">https://cs-tao.github.io/2017/08/19/GIS-for-Web应用开发之道-学习心得/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/08/19/GIS-for-Web应用开发之道-学习心得/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/18/解决C-发送电子邮件失败的问题/" title="解决C#发送电子邮件失败的问题">https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -365,18 +384,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/08/19/Android学习心得/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Android学习心得
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/19/git学习心得/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git学习心得</div>
+    <a href="/2017/10/18/WPF自定义消息框/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">WPF自定义消息框</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -387,7 +397,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">1.</span> <span class="toc-text">源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意"><span class="toc-number">2.</span> <span class="toc-text">注意</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -453,13 +463,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/19/Android学习心得/" title="上一篇: Android学习心得">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/08/19/git学习心得/" title="下一篇: git学习心得">
+            <a href="/2017/10/18/WPF自定义消息框/" title="下一篇: WPF自定义消息框">
                 <i class="fa fa-angle-right"></i>
             </a>
         

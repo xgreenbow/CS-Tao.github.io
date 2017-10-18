@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-10-12T15:00:39.830Z</updated>
+  <updated>2017-10-18T14:32:25.147Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -16,17 +16,109 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决C#发送电子邮件失败的问题</title>
+    <link href="https://cs-tao.github.io/2017/10/18/%E8%A7%A3%E5%86%B3C-%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/</id>
+    <published>2017-10-18T00:21:15.000Z</published>
+    <updated>2017-10-18T14:32:25.147Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><ul>
+<li>EmailHelper.cs文件内容</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Text;</div><div class="line">using System.Net.Mail;</div><div class="line">using static System.Configuration.ConfigurationManager;</div><div class="line"></div><div class="line">namespace View_Spot_of_City.UIControls.Helper</div><div class="line">&#123;</div><div class="line">    public static class EmailHelper</div><div class="line">    &#123;</div><div class="line">        public static bool SendEmail(string mail, string title, string content)</div><div class="line">        &#123;</div><div class="line">            MailMessage message = new MailMessage();</div><div class="line">            &#123;</div><div class="line">                message.To.Add(mail);</div><div class="line">                message.From = new MailAddress(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_NAME&quot;], Encoding.UTF8);</div><div class="line">                message.Subject =title;</div><div class="line">                message.SubjectEncoding = Encoding.UTF8;</div><div class="line">                message.Body = content;</div><div class="line">                message.BodyEncoding = Encoding.UTF8;</div><div class="line">                message.IsBodyHtml = false;</div><div class="line">                message.Priority = MailPriority.Normal;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            SmtpClient smtp = new SmtpClient();</div><div class="line">            &#123;</div><div class="line">                smtp.Host = AppSettings[&quot;SmtpClient_HOST&quot;];</div><div class="line">                smtp.EnableSsl = true;</div><div class="line">                smtp.UseDefaultCredentials = false;</div><div class="line">                smtp.Credentials = new System.Net.NetworkCredential(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_PASSWORD&quot;]);</div><div class="line">            &#125;</div><div class="line">            object userState = message;</div><div class="line">            try</div><div class="line">            &#123;</div><div class="line">                smtp.SendAsync(message, userState);</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">            catch(Exception ex)</div><div class="line">            &#123;</div><div class="line">                Console.Write(ex.Message);</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>配置文件App.Config内容<ul>
+<li>添加``程序集的引用</li>
+<li>在App.Config文件中添加键值，如下（只需要关注appSettings标签内的内容）<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">    &lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">configSections</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">"entityFramework"</span> <span class="attr">type</span>=<span class="string">"System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=*************"</span> <span class="attr">requirePermission</span>=<span class="string">"false"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">startup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">supportedRuntime</span> <span class="attr">version</span>=<span class="string">"v4.0"</span> <span class="attr">sku</span>=<span class="string">".NETFramework,Version=v4.5.2"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">startup</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">appSettings</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--邮箱--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_NUM"</span> <span class="attr">value</span>=<span class="string">"123456789@qq.com"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--邮箱密码--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_PASSWORD"</span> <span class="attr">value</span>=<span class="string">"邮箱密码，QQ邮箱需要许可码"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--邮件显示名--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"MANAGER_MAIL_NAME"</span> <span class="attr">value</span>=<span class="string">"发送邮件使用的用户名"</span> /&gt;</span></div><div class="line">    <span class="comment">&lt;!--QQ邮箱对应的SMTP服务器--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"SmtpClient_HOST"</span> <span class="attr">value</span>=<span class="string">"smtp.qq.com"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">appSettings</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>若使用QQ邮箱，输入密码为许可码，需要在QQ邮箱中打开SMTP服务</p>
+<ul>
+<li>打开QQ邮箱网页版</li>
+<li>点击左上角“设置”，并在导航栏中点击账户标签</li>
+<li>开启SMTP服务并获得许可码<br>  <img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png" alt="开启SMTP服务"></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;源码&quot;&gt;&lt;a href=&quot;#源码&quot; class=&quot;headerlink&quot; title=&quot;源码&quot;&gt;&lt;/a&gt;源码&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;EmailHelper.cs文件内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;t
+    
+    </summary>
+    
+      <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
+    
+    
+      <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WPF自定义消息框</title>
+    <link href="https://cs-tao.github.io/2017/10/18/WPF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%A1%86/"/>
+    <id>https://cs-tao.github.io/2017/10/18/WPF自定义消息框/</id>
+    <published>2017-10-18T00:19:17.000Z</published>
+    <updated>2017-10-18T14:09:09.486Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 一个语言文化的的WPF消息框 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至<a href="https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><ul>
+<li>带OK按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OK1.png" alt="带OK按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OK2.png" alt="带OK按钮的消息框"></li>
+<li>带OK和取Cancel按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OKCancel1.png" alt="带OK和取Cancel按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_OKCancel2.png" alt="带OK和取Cancel按钮的消息框"></li>
+<li>带Yes和No按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNo1.png" alt="带Yes和No按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNo2.png" alt="带Yes和No按钮的消息框"></li>
+<li>带Yes、No和Cancel按钮的消息框<br><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel1.png" alt="带Yes、No和Cancel按钮的消息框"><br><img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MyMessageBox_YesNoCancel2.png" alt="带Yes、No和Cancel按钮的消息框"></li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><ul>
+<li>引用本消息框所在程序集。</li>
+<li><p>在App.xaml文件中添加：<br></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"pack://application:,,,/CSTao.MessageBox;component/Resources.xaml"</span>/&gt;</span></div><div class="line">```<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">如下：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">![添加资源字典](https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/MyMessagebox/MessageBoxResoureCode.png)</div><div class="line"></div><div class="line">### 使用MessageBox</div><div class="line">- 在程序中需要使用的地方添加命名空间：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">```C#</div><div class="line">using CSTao.MessageBox;</div></pre></td></tr></table></figure>
+</li>
+<li><p>调用MessageboxMaster.Show()函数，该函数有多个重载，请按您的需求使用。</p>
+<h3 id="使用语言切换"><a href="#使用语言切换" class="headerlink" title="使用语言切换"></a>使用语言切换</h3></li>
+<li>静态修改<br><br>将<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Languages\LanguagesDictionary.xaml</code>中的<code>Language.CN.xaml</code>改为<code>Language.EN.xaml</code>即可。</li>
+<li>动态修改<br><br>在您定义的修改语言的响应函数中添加代码<br><br>```C#<br>string requestedCulture = string.Format(@”pack://application:,,,/CSTao.MessageBox;component/Languages/Language.{0}.xaml”, languageDictionary[0或1]);<br>ResourceDictionary resourceDictionary = Application.Current.Resources.MergedDictionaries.FirstOrDefault((x) =&gt;<br>{<br>  return (x.Source == null) ? false : (x.Source.OriginalString.Contains(“CSTao.MessageBox;component/Languages”));<br>});<br>if (resourceDictionary != null)<br>{<br>  Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary);<br>  ResourceDictionary requestDictionary = new ResourceDictionary()<br>  {<pre><code>Source = new Uri(requestedCulture)
+</code></pre>  };<br>  Application.Current.Resources.MergedDictionaries.Add(requestDictionary);<br>}<br><code>``&lt;br&gt;</code>温馨提醒:`本方法是笔者用于全局改变软件语言的代码，不仅针对本消息框，慎用</li>
+</ul>
+<h3 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h3><p>修改<code>MyMessageBox\MyMessagebox\CSTao.MessageBox\Resources.xaml</code>中<code>PrimaryHueBrush</code>键的值即可</p>
+<h2 id="特别感谢"><a href="#特别感谢" class="headerlink" title="特别感谢"></a>特别感谢</h2><p>感谢<a href="https://hpdell.github.io/" target="_blank" rel="external">师兄</a>提供的代码参考。</p>
+</the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 一个语言文化的的WPF消息框 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至&lt;a href=&quot;https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
+    
+    
+      <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于带登录界面的WPF应用的问题</title>
     <link href="https://cs-tao.github.io/2017/10/11/%E5%85%B3%E4%BA%8E%E5%B8%A6%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E7%9A%84WPF%E5%BA%94%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://cs-tao.github.io/2017/10/11/关于带登录界面的WPF应用的问题/</id>
     <published>2017-10-11T15:24:18.000Z</published>
-    <updated>2017-10-12T15:00:39.830Z</updated>
+    <updated>2017-10-18T00:14:49.160Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 解决WPF关闭登录窗口后主窗口无法打开的问题 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    笔者最近在开发一款<a href="https://github.com/CS-Tao/View-Spot-of-City" target="_blank" rel="external">WPF应用程序</a>的时候，发现在登录窗口关闭之后，主窗口无法打开，遂上网搜索了一下，找到了问题所在<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
 <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>笔者通过重载App类OnStartup()函数，在其中添加了启动登录框的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //登录</div><div class="line">    bool? loginDlgResult = (new LoginDlg()).ShowDialog();</div><div class="line">    if (!loginDlgResult.HasValue || !loginDlgResult.Value)</div><div class="line">        Environment.Exit(0);</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>却发现登录窗口关闭后不能启动主窗口（也就是WPF自动生成的MainWindow类对应的窗口）。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将App的ShutdownMode属性改为OnExplicitShutdown即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">protected override void OnStartup(StartupEventArgs e)</div><div class="line">&#123;</div><div class="line">    //应用程序关闭时，才System.Windows.Application.Shutdown调用</div><div class="line">    this.ShutdownMode = ShutdownMode.OnExplicitShutdown;</div><div class="line"></div><div class="line">    //验证License</div><div class="line">    if (!RegisterMaster.CanStart())</div><div class="line">    &#123;</div><div class="line">        Environment.Exit(0);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    //登录</div><div class="line">    bool? loginDlgResult = (new LoginDlg()).ShowDialog();</div><div class="line">    if (!loginDlgResult.HasValue || !loginDlgResult.Value)</div><div class="line">        Environment.Exit(0);</div><div class="line"></div><div class="line">    base.OnStartup(e);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>注意：</code>需要关闭应用程序时需要显示调用System.Windows.Application.Shutdown()函数，或其他退出程序的函数。</p>
 <h2 id="出现问题的原因"><a href="#出现问题的原因" class="headerlink" title="出现问题的原因"></a>出现问题的原因</h2><p>由上我们可以看出问题的根源就是App的ShutdownMode属性，那么这个属性有什么意义呢？<br><br>我们可以很容易地知道ShutdownMode是一个枚举属性，其可能得取值有三个，分别是OnLastWindowClose、OnMainWindowClose、OnExplicitShutdown。<br>进一步探索笔者发现ShutdownMode属性的默认值为OnLastWindowClose，也就是WPF会在最后一个窗口关闭时隐式调用Application的Shutdown()函数，对此MSDN中有提到：<a href="https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.shutdownmode(v=vs.100).aspx" target="_blank" rel="external">https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.shutdownmode(v=vs.100).aspx</a><br></p>
 <blockquote>
 <p>如果将 ShutdownMode 设置为 OnLastWindowClose，则 Windows Presentation Foundation (WPF) 会在应用程序中的最后一个窗口关闭时隐式调用 Shutdown，即使任何当前已经实例化的窗口被设置为主窗口也是如此。请参见 <a href="https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.mainwindow(v=vs.100).aspx" target="_blank" rel="external">https://msdn.microsoft.com/zh-cn/subscriptions/system.windows.application.mainwindow(v=vs.100).aspx</a></p>
@@ -121,7 +213,7 @@
     
     <content type="html"><![CDATA[<p><strong> 百度地图API for JavaScript的使用 </strong><excerpt in="" index="" |="" 首页摘要=""><br>在Js中利用百度地图API对地理坐标系和投影坐标系（墨卡托）进行互转<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h2 id="导入js文件"><a href="#导入js文件" class="headerlink" title="导入js文件"></a>导入js文件</h2><p>在html文件中添加<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://api.map.baidu.com/api?v=1.2"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<h2 id="导入js文件"><a href="#导入js文件" class="headerlink" title="导入js文件"></a>导入js文件</h2><p>在html文件中添加<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://api.map.baidu.com/api?v=1.2"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="地理坐标转为平面坐标"><a href="#地理坐标转为平面坐标" class="headerlink" title="地理坐标转为平面坐标"></a>地理坐标转为平面坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> mercatorPoint = projection.lngLatToPoint(<span class="keyword">new</span> BMap.Point(<span class="number">114.3908</span>, <span class="number">30.4879</span>));</div><div class="line">alert(<span class="string">"x = "</span> + mercatorPoint.x + <span class="string">", y = "</span> + mercatorPoint.y);</div></pre></td></tr></table></figure>
 <h2 id="平面坐标转为地理坐标"><a href="#平面坐标转为地理坐标" class="headerlink" title="平面坐标转为地理坐标"></a>平面坐标转为地理坐标</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> projection = <span class="keyword">new</span> BMap.MercatorProjection();</div><div class="line"><span class="keyword">var</span> lngLat = projection.pointToLngLat(<span class="keyword">new</span> BMap.Pixel(<span class="number">12734064.16</span>, <span class="number">3544542.8</span>));</div><div class="line">alert(<span class="string">"lng = "</span> + lngLat.lng + <span class="string">", lat = "</span> + lngLat.lat);</div></pre></td></tr></table></figure>]]></content>
     
@@ -548,7 +640,7 @@
     <link href="https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/"/>
     <id>https://cs-tao.github.io/2017/08/19/C-中await和async/</id>
     <published>2017-08-18T16:38:21.000Z</published>
-    <updated>2017-08-19T08:57:45.358Z</updated>
+    <updated>2017-10-18T14:09:55.866Z</updated>
     
     <content type="html"><![CDATA[<p><strong> C#中await和async使用介绍 </strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
