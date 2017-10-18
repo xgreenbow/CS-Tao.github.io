@@ -5,19 +5,19 @@
   
   <title>解决C#发送电子邮件失败的问题 | 梦觉知晓的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="源码 EmailHelper.cs文件内容  1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Text;using System.Net.Mail;using static System.Configuration.Configurati">
+  <meta name="description" content="解决C#-WPF桌面软件发送电子邮件失败的问题      C#发送邮件的方法在网上搜一下可以找到很多，几个小时过去了还是没能实现，对比了很多人写的博客，笔者最终找到了问题所在，并在此记录">
 <meta name="keywords" content="C#,Wpf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决C#发送电子邮件失败的问题">
 <meta property="og:url" content="https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/index.html">
 <meta property="og:site_name" content="梦觉知晓的博客">
-<meta property="og:description" content="源码 EmailHelper.cs文件内容  1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Text;using System.Net.Mail;using static System.Configuration.Configurati">
+<meta property="og:description" content="解决C#-WPF桌面软件发送电子邮件失败的问题      C#发送邮件的方法在网上搜一下可以找到很多，几个小时过去了还是没能实现，对比了很多人写的博客，笔者最终找到了问题所在，并在此记录">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png">
-<meta property="og:updated_time" content="2017-10-18T14:32:25.147Z">
+<meta property="og:updated_time" content="2017-10-18T14:37:58.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决C#发送电子邮件失败的问题">
-<meta name="twitter:description" content="源码 EmailHelper.cs文件内容  1234567891011121314151617181920212223242526272829303132333435363738394041424344using System;using System.Text;using System.Net.Mail;using static System.Configuration.Configurati">
+<meta name="twitter:description" content="解决C#-WPF桌面软件发送电子邮件失败的问题      C#发送邮件的方法在网上搜一下可以找到很多，几个小时过去了还是没能实现，对比了很多人写的博客，笔者最终找到了问题所在，并在此记录">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png">
   
     <link rel="alternative" href="/atom.xml" title="梦觉知晓的博客" type="application/atom+xml">
@@ -338,7 +338,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><ul>
+        <p><strong> 解决C#-WPF桌面软件发送电子邮件失败的问题 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    C#发送邮件的方法在网上搜一下可以找到很多，几个小时过去了还是没能实现，对比了很多人写的博客，笔者最终找到了问题所在，并在此记录<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><ul>
 <li>EmailHelper.cs文件内容</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Text;</div><div class="line">using System.Net.Mail;</div><div class="line">using static System.Configuration.ConfigurationManager;</div><div class="line"></div><div class="line">namespace View_Spot_of_City.UIControls.Helper</div><div class="line">&#123;</div><div class="line">    public static class EmailHelper</div><div class="line">    &#123;</div><div class="line">        public static bool SendEmail(string mail, string title, string content)</div><div class="line">        &#123;</div><div class="line">            MailMessage message = new MailMessage();</div><div class="line">            &#123;</div><div class="line">                message.To.Add(mail);</div><div class="line">                message.From = new MailAddress(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_NAME&quot;], Encoding.UTF8);</div><div class="line">                message.Subject =title;</div><div class="line">                message.SubjectEncoding = Encoding.UTF8;</div><div class="line">                message.Body = content;</div><div class="line">                message.BodyEncoding = Encoding.UTF8;</div><div class="line">                message.IsBodyHtml = false;</div><div class="line">                message.Priority = MailPriority.Normal;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            SmtpClient smtp = new SmtpClient();</div><div class="line">            &#123;</div><div class="line">                smtp.Host = AppSettings[&quot;SmtpClient_HOST&quot;];</div><div class="line">                smtp.EnableSsl = true;</div><div class="line">                smtp.UseDefaultCredentials = false;</div><div class="line">                smtp.Credentials = new System.Net.NetworkCredential(AppSettings[&quot;MANAGER_MAIL_NUM&quot;], AppSettings[&quot;MANAGER_MAIL_PASSWORD&quot;]);</div><div class="line">            &#125;</div><div class="line">            object userState = message;</div><div class="line">            try</div><div class="line">            &#123;</div><div class="line">                smtp.SendAsync(message, userState);</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">            catch(Exception ex)</div><div class="line">            &#123;</div><div class="line">                Console.Write(ex.Message);</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -356,7 +359,7 @@
 <li>点击左上角“设置”，并在导航栏中点击账户标签</li>
 <li>开启SMTP服务并获得许可码<br>  <img src="https://raw.githubusercontent.com/CS-Tao/github-content/master/contents/blog/image/WpfSendMail.png" alt="开启SMTP服务"></li>
 </ul>
-
+</the>
       
       
     </div>
@@ -368,7 +371,7 @@
         <p><span>本文标题:</span><a href="/2017/10/18/解决C-发送电子邮件失败的问题/">解决C#发送电子邮件失败的问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 梦觉知晓 的个人博客">梦觉知晓</a></p>
         <p><span>发布时间:</span>2017年10月18日 - 08时21分</p>
-        <p><span>最后更新:</span>2017年10月18日 - 22时32分</p>
+        <p><span>最后更新:</span>2017年10月18日 - 22时37分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/10/18/解决C-发送电子邮件失败的问题/" title="解决C#发送电子邮件失败的问题">https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/</a>
             <span class="copy-path" data-clipboard-text="原文: https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/　　作者: 梦觉知晓" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
