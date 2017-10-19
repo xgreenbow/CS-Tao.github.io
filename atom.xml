@@ -72,7 +72,7 @@
     <link href="https://cs-tao.github.io/2017/10/18/%E8%A7%A3%E5%86%B3C-%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/</id>
     <published>2017-10-18T00:21:15.000Z</published>
-    <updated>2017-10-19T13:44:34.043Z</updated>
+    <updated>2017-10-19T14:46:22.383Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 解决C#-WPF桌面软件发送电子邮件失败的问题 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    C#发送邮件的方法在网上搜一下可以找到很多，几个小时过去了还是没能实现，对比了很多人写的博客，笔者最终找到了问题所在，并在此记录<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -104,8 +104,6 @@
     </summary>
     
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
-    
-      <category term="language" scheme="https://cs-tao.github.io/categories/software/language/"/>
     
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
@@ -520,9 +518,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
-    
       <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
@@ -688,11 +686,11 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
     
       <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
-    
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
   </entry>
   
