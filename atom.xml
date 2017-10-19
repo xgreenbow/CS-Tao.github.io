@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-10-18T14:41:47.940Z</updated>
+  <updated>2017-10-19T14:39:08.693Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -16,11 +16,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>gitweb安装和配置</title>
+    <link href="https://cs-tao.github.io/2017/10/19/gitweb%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
+    <id>https://cs-tao.github.io/2017/10/19/gitweb安装和配置/</id>
+    <published>2017-10-19T07:35:55.000Z</published>
+    <updated>2017-10-19T14:39:08.693Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 基于Apache服务器的gitweb安装和配置 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>gitweb需要使用的配置文件的位置和功能。操作系统：Ubuntu 16.04 LTS<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h1 id="安装（转载）"><a href="#安装（转载）" class="headerlink" title="安装（转载）"></a>安装（转载）</h1><p><a href="http://blog.csdn.net/qq_25667339/article/details/53083968" target="_blank" rel="external">原文地址</a></p>
+<h2 id="安装gitweb和Apache"><a href="#安装gitweb和Apache" class="headerlink" title="安装gitweb和Apache"></a>安装gitweb和Apache</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gitweb apache2</div></pre></td></tr></table></figure>
+<h2 id="修改-etc-gitweb-conf"><a href="#修改-etc-gitweb-conf" class="headerlink" title="修改/etc/gitweb.conf"></a>修改/etc/gitweb.conf</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/gitweb.conf</div></pre></td></tr></table></figure>
+<p>内容如下：<br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$projectroot</span> = <span class="string">"/home/git/repositories"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$git_temp</span> = <span class="string">"/tmp"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$projects_list</span> = <span class="variable">$projectroot</span>;</div><div class="line">  </div><div class="line">@stylesheets = (<span class="string">"../gitweb/static/gitweb.css"</span>);</div><div class="line">  </div><div class="line"><span class="variable">$javascript</span> = <span class="string">"../gitweb/static/gitweb.js"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$logo</span> = <span class="string">"../gitweb/static/git-logo.png"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$favicon</span> = <span class="string">"../gitweb/static/git-favicon.png"</span>;</div><div class="line">  </div><div class="line">@diff_opts = ();</div></pre></td></tr></table></figure></p>
+<p>保存退出</p>
+<h2 id="修改-etc-apache2-conf-available-gitweb-conf"><a href="#修改-etc-apache2-conf-available-gitweb-conf" class="headerlink" title="修改/etc/apache2/conf-available/gitweb.conf"></a>修改/etc/apache2/conf-available/gitweb.conf</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/apache2/conf-available/gitweb.conf</div></pre></td></tr></table></figure>
+<p>内容如下：<br><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Alias /gitweb /usr/share/gitweb</div><div class="line"><span class="tag">&lt;<span class="name">Directory</span> /<span class="attr">usr</span>/<span class="attr">share</span>/<span class="attr">gitweb</span>&gt;</span></div><div class="line">    Options +FollowSymLinks +ExecCGI</div><div class="line">    AddHandler cgi-script .cgi</div><div class="line">    AuthType Basic</div><div class="line">    AuthName "Restricted Content"</div><div class="line">    AuthUserFile /home/git/.htpasswd</div><div class="line">    Require valid-user</div><div class="line"><span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></div><div class="line">保存退出<span class="tag">&lt;<span class="name">br</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><code>注意：</code>“AuthUserFile”是认证文件位置，用命令<br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">htpasswd -c 认证文件位置 用户名</div></pre></td></tr></table></figure></p>
+<p>然后根据提示输入密码。</p>
+<h2 id="使cgi生效"><a href="#使cgi生效" class="headerlink" title="使cgi生效"></a>使cgi生效</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo a2enmod cgi</div><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
+<h2 id="访问http-192-168-100-200-cgi-bin-gitweb-cgi就可看到git的项目信息"><a href="#访问http-192-168-100-200-cgi-bin-gitweb-cgi就可看到git的项目信息" class="headerlink" title="访问http://192.168.100.200/cgi-bin/gitweb.cgi就可看到git的项目信息"></a>访问<a href="http://192.168.100.200/cgi-bin/gitweb.cgi就可看到git的项目信息" target="_blank" rel="external">http://192.168.100.200/cgi-bin/gitweb.cgi就可看到git的项目信息</a></h2><h1 id="我的安装和配置"><a href="#我的安装和配置" class="headerlink" title="我的安装和配置"></a>我的安装和配置</h1><ul>
+<li><p>在上面的基础上，在Apache的网站根目录创建gitweb文件夹，把/usr/share/gitweb/*的文件链接到新建的gitweb文件夹中<br></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /var/www/html/</div><div class="line">mkdir gitweb</div><div class="line">ln -s /usr/share/gitweb/* ./gitweb</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除”/usr/lib/cgi-bin/“文件夹中的所有文件，再Apache配置文件中为该目录设置密码</p>
+</li>
+</ul>
+<h1 id="配置文件备忘"><a href="#配置文件备忘" class="headerlink" title="配置文件备忘"></a>配置文件备忘</h1><h2 id="主配置文件"><a href="#主配置文件" class="headerlink" title="主配置文件"></a>主配置文件</h2><ul>
+<li>文件位置<br>“/etc/gitweb.conf”</li>
+<li>文件功能<br>设置项目集根目录、临时文件目录、布局文件位置及资源文件位置等。</li>
+</ul>
+<h2 id="Apache中gitweb的配置"><a href="#Apache中gitweb的配置" class="headerlink" title="Apache中gitweb的配置"></a>Apache中gitweb的配置</h2><ul>
+<li>文件位置<br>“/etc/apache2/conf-available/gitweb.conf<br>“</li>
+<li>文件功能<br>指定CGI文件位置、认证文件位置等。</li>
+<li>主要内容<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">IfDefine</span> <span class="attr">ENABLE_GITWEB</span>&gt;</span></div><div class="line">    Alias /gitweb /usr/share/gitweb</div><div class="line">    <span class="tag">&lt;<span class="name">Directory</span> /<span class="attr">usr</span>/<span class="attr">share</span>/<span class="attr">gitweb</span>&gt;</span></div><div class="line">        Options +FollowSymLinks +ExecCGI</div><div class="line">        AddHandler cgi-script .cgi</div><div class="line">        AuthType Basic</div><div class="line">        AuthName "Restricted Content"</div><div class="line">        AuthUserFile /home/git/.htpasswd</div><div class="line">        Require valid-user</div><div class="line">    <span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">IfDefine</span>&gt;</span></div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 基于Apache服务器的gitweb安装和配置 &lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;gitweb需要使用的配置文件的位置和功能。操作系统：Ubuntu 16.04 LTS&lt;br&gt;
+    
+    </summary>
+    
+      <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
+    
+    
+      <category term="gitweb" scheme="https://cs-tao.github.io/tags/gitweb/"/>
+    
+      <category term="Apache" scheme="https://cs-tao.github.io/tags/Apache/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决C#发送电子邮件失败的问题</title>
     <link href="https://cs-tao.github.io/2017/10/18/%E8%A7%A3%E5%86%B3C-%E5%8F%91%E9%80%81%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://cs-tao.github.io/2017/10/18/解决C-发送电子邮件失败的问题/</id>
     <published>2017-10-18T00:21:15.000Z</published>
-    <updated>2017-10-18T14:41:47.940Z</updated>
+    <updated>2017-10-19T13:44:34.043Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 解决C#-WPF桌面软件发送电子邮件失败的问题 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>    C#发送邮件的方法在网上搜一下可以找到很多，几个小时过去了还是没能实现，对比了很多人写的博客，笔者最终找到了问题所在，并在此记录<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -53,6 +105,8 @@
     
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
+      <category term="language" scheme="https://cs-tao.github.io/categories/software/language/"/>
+    
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
@@ -65,7 +119,7 @@
     <link href="https://cs-tao.github.io/2017/10/18/WPF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E6%A1%86/"/>
     <id>https://cs-tao.github.io/2017/10/18/WPF自定义消息框/</id>
     <published>2017-10-18T00:19:17.000Z</published>
-    <updated>2017-10-18T16:16:58.576Z</updated>
+    <updated>2017-10-19T14:40:15.292Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 一个更改按钮显示语言的的WPF消息框 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>消息框采用Material风格，支持中英切换，支持的返回值有Ok、Cancel、Yes、No，代码已托管并发布至<a href="https://github.com/CS-Tao/MyMessageBox/releases/tag/v1.0" target="_blank" rel="external">Github</a><br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -300,7 +354,7 @@
     <link href="https://cs-tao.github.io/2017/09/02/Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84PostgreSQL%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
     <id>https://cs-tao.github.io/2017/09/02/Ubuntu系统下的PostgreSQL安装和配置/</id>
     <published>2017-09-02T15:20:58.000Z</published>
-    <updated>2017-09-07T04:38:48.431Z</updated>
+    <updated>2017-10-18T16:39:35.427Z</updated>
     
     <content type="html"><![CDATA[<p><strong> Ubuntu 16.04系统下的PostgreSQL 9.6安装和配置的详细步骤 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>PostgreSQL 是一个自由的对象-关系数据库服务器(数据库管理系统)，它在 BSD-风格许可证下发行<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -647,11 +701,10 @@
     <link href="https://cs-tao.github.io/2017/08/19/C-%E4%B8%ADawait%E5%92%8Casync/"/>
     <id>https://cs-tao.github.io/2017/08/19/C-中await和async/</id>
     <published>2017-08-18T16:38:21.000Z</published>
-    <updated>2017-10-18T14:09:55.866Z</updated>
+    <updated>2017-10-19T06:05:50.002Z</updated>
     
     <content type="html"><![CDATA[<p><strong> C#中await和async使用介绍 </strong> <excerpt in="" index="" |="" 首页摘要=""><br><a id="more"></a></excerpt></p>
-<the rest="" of="" contents="" |="" 余下全文="">
-</the>]]></content>
+<the rest="" of="" contents="" |="" 余下全文=""></the>]]></content>
     
     <summary type="html">
     
