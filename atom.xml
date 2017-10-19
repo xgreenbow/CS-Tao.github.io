@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-10-19T14:39:08.693Z</updated>
+  <updated>2017-10-19T14:50:06.682Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://cs-tao.github.io/2017/10/19/gitweb%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
     <id>https://cs-tao.github.io/2017/10/19/gitweb安装和配置/</id>
     <published>2017-10-19T07:35:55.000Z</published>
-    <updated>2017-10-19T14:39:08.693Z</updated>
+    <updated>2017-10-19T14:50:06.682Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 基于Apache服务器的gitweb安装和配置 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>gitweb需要使用的配置文件的位置和功能。操作系统：Ubuntu 16.04 LTS<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
@@ -30,8 +30,8 @@
 <p>内容如下：<br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$projectroot</span> = <span class="string">"/home/git/repositories"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$git_temp</span> = <span class="string">"/tmp"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$projects_list</span> = <span class="variable">$projectroot</span>;</div><div class="line">  </div><div class="line">@stylesheets = (<span class="string">"../gitweb/static/gitweb.css"</span>);</div><div class="line">  </div><div class="line"><span class="variable">$javascript</span> = <span class="string">"../gitweb/static/gitweb.js"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$logo</span> = <span class="string">"../gitweb/static/git-logo.png"</span>;</div><div class="line">  </div><div class="line"><span class="variable">$favicon</span> = <span class="string">"../gitweb/static/git-favicon.png"</span>;</div><div class="line">  </div><div class="line">@diff_opts = ();</div></pre></td></tr></table></figure></p>
 <p>保存退出</p>
 <h2 id="修改-etc-apache2-conf-available-gitweb-conf"><a href="#修改-etc-apache2-conf-available-gitweb-conf" class="headerlink" title="修改/etc/apache2/conf-available/gitweb.conf"></a>修改/etc/apache2/conf-available/gitweb.conf</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/apache2/conf-available/gitweb.conf</div></pre></td></tr></table></figure>
-<p>内容如下：<br><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Alias /gitweb /usr/share/gitweb</div><div class="line"><span class="tag">&lt;<span class="name">Directory</span> /<span class="attr">usr</span>/<span class="attr">share</span>/<span class="attr">gitweb</span>&gt;</span></div><div class="line">    Options +FollowSymLinks +ExecCGI</div><div class="line">    AddHandler cgi-script .cgi</div><div class="line">    AuthType Basic</div><div class="line">    AuthName "Restricted Content"</div><div class="line">    AuthUserFile /home/git/.htpasswd</div><div class="line">    Require valid-user</div><div class="line"><span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></div><div class="line">保存退出<span class="tag">&lt;<span class="name">br</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p><code>注意：</code>“AuthUserFile”是认证文件位置，用命令<br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">htpasswd -c 认证文件位置 用户名</div></pre></td></tr></table></figure></p>
+<p>内容如下：<br><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Alias /gitweb /usr/share/gitweb</div><div class="line"><span class="tag">&lt;<span class="name">Directory</span> /<span class="attr">usr</span>/<span class="attr">share</span>/<span class="attr">gitweb</span>&gt;</span></div><div class="line">    Options +FollowSymLinks +ExecCGI</div><div class="line">    AddHandler cgi-script .cgi</div><div class="line">    AuthType Basic</div><div class="line">    AuthName "Restricted Content"</div><div class="line">    AuthUserFile /home/git/.htpasswd</div><div class="line">    Require valid-user</div><div class="line"><span class="tag">&lt;/<span class="name">Directory</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>保存退出<br><br><code>注意：</code>“AuthUserFile”是认证文件位置，用命令<br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">htpasswd -c 认证文件位置 用户名</div></pre></td></tr></table></figure></p>
 <p>然后根据提示输入密码。</p>
 <h2 id="使cgi生效"><a href="#使cgi生效" class="headerlink" title="使cgi生效"></a>使cgi生效</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo a2enmod cgi</div><div class="line">sudo service apache2 restart</div></pre></td></tr></table></figure>
 <h2 id="访问http-192-168-100-200-cgi-bin-gitweb-cgi就可看到git的项目信息"><a href="#访问http-192-168-100-200-cgi-bin-gitweb-cgi就可看到git的项目信息" class="headerlink" title="访问http://192.168.100.200/cgi-bin/gitweb.cgi就可看到git的项目信息"></a>访问<a href="http://192.168.100.200/cgi-bin/gitweb.cgi就可看到git的项目信息" target="_blank" rel="external">http://192.168.100.200/cgi-bin/gitweb.cgi就可看到git的项目信息</a></h2><h1 id="我的安装和配置"><a href="#我的安装和配置" class="headerlink" title="我的安装和配置"></a>我的安装和配置</h1><ul>
@@ -518,9 +518,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
-    
       <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
+    
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
@@ -686,11 +686,11 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
-    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
     
       <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
+    
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
   </entry>
   
