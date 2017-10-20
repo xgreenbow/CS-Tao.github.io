@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cs-tao.github.io/"/>
-  <updated>2017-10-19T14:50:06.682Z</updated>
+  <updated>2017-10-20T03:14:12.791Z</updated>
   <id>https://cs-tao.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://cs-tao.github.io/2017/10/19/gitweb%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
     <id>https://cs-tao.github.io/2017/10/19/gitweb安装和配置/</id>
     <published>2017-10-19T07:35:55.000Z</published>
-    <updated>2017-10-19T14:50:06.682Z</updated>
+    <updated>2017-10-20T03:14:12.791Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 基于Apache服务器的gitweb安装和配置 </strong> <excerpt in="" index="" |="" 首页摘要=""><br>gitweb需要使用的配置文件的位置和功能。操作系统：Ubuntu 16.04 LTS<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
@@ -38,9 +38,10 @@
 <li><p>在上面的基础上，在Apache的网站根目录创建gitweb文件夹，把/usr/share/gitweb/*的文件链接到新建的gitweb文件夹中<br></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /var/www/html/</div><div class="line">mkdir gitweb</div><div class="line">ln -s /usr/share/gitweb/* ./gitweb</div></pre></td></tr></table></figure>
 </li>
-<li><p>删除”/usr/lib/cgi-bin/“文件夹中的所有文件，再Apache配置文件中为该目录设置密码</p>
+<li><p>删除”/usr/lib/cgi-bin/“文件夹中的所有文件，或Apache配置文件中为该目录设置密码</p>
 </li>
 </ul>
+<h1 id="配置布局"><a href="#配置布局" class="headerlink" title="配置布局"></a>配置布局</h1><p>可以使用别人已经写好的布局和图标，见<a href="https://github.com/kogakure/gitweb-theme" target="_blank" rel="external">github</a></p>
 <h1 id="配置文件备忘"><a href="#配置文件备忘" class="headerlink" title="配置文件备忘"></a>配置文件备忘</h1><h2 id="主配置文件"><a href="#主配置文件" class="headerlink" title="主配置文件"></a>主配置文件</h2><ul>
 <li>文件位置<br>“/etc/gitweb.conf”</li>
 <li>文件功能<br>设置项目集根目录、临时文件目录、布局文件位置及资源文件位置等。</li>
@@ -518,9 +519,9 @@
     
       <category term="C#" scheme="https://cs-tao.github.io/tags/C/"/>
     
-      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
-    
       <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+    
+      <category term="Wpf" scheme="https://cs-tao.github.io/tags/Wpf/"/>
     
       <category term="GMap.net" scheme="https://cs-tao.github.io/tags/GMap-net/"/>
     
@@ -686,11 +687,11 @@
       <category term="software" scheme="https://cs-tao.github.io/categories/software/"/>
     
     
+      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
+    
       <category term="Git" scheme="https://cs-tao.github.io/tags/Git/"/>
     
       <category term="Github" scheme="https://cs-tao.github.io/tags/Github/"/>
-    
-      <category term="Project" scheme="https://cs-tao.github.io/tags/Project/"/>
     
   </entry>
   
